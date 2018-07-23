@@ -2,7 +2,7 @@
 
 .footer
   padding-left: 166px
-  +rmin(992)
+  +rmin(768)
     padding-left: 113px
   +rmin(1440)
     padding-left: 166px
@@ -17,15 +17,32 @@
     align-items: center
     justify-content: space-between
     min-height: 120px
-    +rmin(992)
+    +rmin(768)
+      flex-wrap: wrap
       min-height: 90px
+    +rmin(992)
+      flex-wrap: nowrap
     +rmin(1440)
       min-height: 120px
 
 
   &__col
+    &-0,
+    &-1,
+    &-2,
+    &-3
+      +rmin(768)
+        width: 50%
+      +rmin(992)
+        width: auto
+
     &-0
       padding-left: 13px
+    &-2
+      +rmin(768)
+        padding-left: 13px
+      +rmin(992)
+        padding-left: 0
     &-3
       display: flex
       align-items: center
@@ -40,7 +57,7 @@
     position: relative
     color: $c-suvaGray
     font-size: 18px
-    +rmin(992)
+    +rmin(768)
       font-size: 12px
     +rmin(1440)
       font-size: 18px
@@ -58,7 +75,7 @@
     color: $c-suvaGray
     font-size: 18px
     font-weight: 300
-    +rmin(992)
+    +rmin(768)
       font-size: 12px
     +rmin(1440)
       font-size: 18px
@@ -67,14 +84,14 @@
     text-transform: uppercase
     color: $c-suvaGray
     font-size: 14px
-    +rmin(992)
+    +rmin(768)
       font-size: 12px
     +rmin(1440)
       font-size: 14px
 
   &__developBy
     color: $c-suvaGray
-    +rmin(992)
+    +rmin(768)
       font-size: 12px
     +rmin(1440)
       font-size: 16px
