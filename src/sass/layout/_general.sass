@@ -45,6 +45,12 @@ body, html
     // header offset ex
     //padding-top: 100px
     padding-left: (166px + 196px)
+    +rmin(320)
+    +rmin(768)
+    +rmin(992)
+      padding-left: (113px + 84px)
+    +rmin(1440)
+      padding-left: (166px + 196px)
 
 .container
   width: 100%
@@ -58,6 +64,10 @@ body, html
   &-fluid
     max-width: 100%
     padding-left: 196px
+    +rmin(992)
+      padding-left: 84px
+    +rmin(1200)
+      padding-left: 196px
   &-inner
     padding-left: 0
     max-width: (1459px +15px)
