@@ -1,0 +1,42 @@
+// HAMBURGER
+
+.hamburger
+  cursor: pointer
+  display: none
+  +r(767)
+    display: block
+
+
+  &__box
+    display: flex
+    position: relative
+    width: 42px
+    height: 28px
+
+
+    &-line
+      position: absolute
+      top: 50%
+      transform: translateY(-50%)
+      width: 100%
+      height: 3px
+      border-radius: 2px
+      background-color: $c-navyBlue
+
+      &:before,
+      &:after
+        content: ""
+        position: absolute
+        right: 0
+        height: 3px
+        background-color: $c-navyBlue
+      &:before
+        top: -12px
+        width: 100%
+      &:after
+        bottom: -12px
+        width: 21px
+        +transition(width)
+
+        .is-active &
+          width: 100%

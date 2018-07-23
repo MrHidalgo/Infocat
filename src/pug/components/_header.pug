@@ -30,18 +30,23 @@ header.header
 
     +logo("header")
 
-    .nav
-      ul.nav__list
-        each val, idx in navArr
-          li.nav__item(class!= "nav__item-" + idx)
-            a(
-              href= navArr[idx].href
-              title=""
-              class="nav__btn"
-            )
-              i(class!= "icon-" + navArr[idx].iconName)
-              span!= navArr[idx].name
+    .hamburger(hamburger-js)
+      .hamburger__box
+        .hamburger__box-line
 
-    +phone("header")
+    .header__mobile
+      .nav
+        ul.nav__list
+          each val, idx in navArr
+            li.nav__item(class!= "nav__item-" + idx)
+              a(
+                href= navArr[idx].href
+                title=""
+                class="nav__btn"
+              )
+                i(class!= "icon-" + navArr[idx].iconName)
+                span!= navArr[idx].name
+
+      +phone("header")
         
 // HEADER :: END

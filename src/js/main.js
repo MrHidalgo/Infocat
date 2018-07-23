@@ -33,6 +33,8 @@ $(document).ready(function(){
     initMasks();
     initLazyLoad();
 
+    hamburgerMenu();
+
     // development helper
     _window.on('resize', debounce(setBreakpoint, 200))
 
@@ -113,14 +115,17 @@ $(document).ready(function(){
 
 
   // HAMBURGER TOGGLER
-  _document.on('click', '[js-hamburger]', function(){
-    $(this).toggleClass('is-active');
-    $('.mobile-navi').toggleClass('is-active');
-  });
-
-  function closeMobileMenu(){
-    $('[js-hamburger]').removeClass('is-active');
-    $('.mobile-navi').removeClass('is-active');
+  function hamburgerMenu() {
+    $("[hamburger-js]").on("click", function(e) {
+      $(e.currentTarget).toggleClass("is-active");
+      $(".header__mobile").toggleClass("is-open");
+      $("body, html").toggleClass("is-hide-scroll");
+    })
+  }
+  function closeMobileMenu() {
+    $("[hamburger-js]").removeClass("is-active");
+    $(".header__mobile").removeClass("is-open");
+    $("body, html").removeClass("is-hide-scroll")
   }
 
   // SET ACTIVE CLASS IN HEADER
@@ -218,16 +223,18 @@ $(document).ready(function(){
       // }
     });
 
-    var freeCurrent = $("[main-count-js]"),
-      freeMain = $("[main-len-js]");
+    if (freeSwiper.length > 0) {
+      var freeCurrent = $("[main-count-js]"),
+        freeMain = $("[main-len-js]");
 
-    // -2: slider loop, and we remove duplicate
-    freeMain.text((freeSwiper.slides.length - 2) || 0);
-    freeCurrent.text((freeSwiper.realIndex + 1) || 0);
-
-    freeSwiper.on('slideChange', function() {
+      // -2: slider loop, and we remove duplicate
+      freeMain.text((freeSwiper.slides.length - 2) || 0);
       freeCurrent.text((freeSwiper.realIndex + 1) || 0);
-    });
+
+      freeSwiper.on('slideChange', function() {
+        freeCurrent.text((freeSwiper.realIndex + 1) || 0);
+      });
+    }
   }
 
   //////////

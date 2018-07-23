@@ -1,0 +1,39 @@
+// SWIPER
+
+.swiper
+  &-container
+    padding-bottom: 36px
+  &-pagination
+    display: flex
+    justify-content: center
+    bottom: 0 !important
+    transform: translateX(-7.4%)
+    &-bullet
+      position: relative
+      opacity: 1
+      width: 36px
+      height: 36px
+      margin: 0 (36px / 2) !important
+      border: 1px solid transparent
+      background-color: transparent
+      +transition(border-color)
+
+
+      &:after
+        content: ""
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+        width: 16px
+        height: 16px
+        border-radius: 100%
+        background-color: rgba($c-black, 0.43)
+        +transition(background-color)
+
+      &-active
+        border-color: $c-navyBlue
+        +transition(border-color)
+        &:after
+          background-color: $c-navyBlue
+          +transition(background-color)

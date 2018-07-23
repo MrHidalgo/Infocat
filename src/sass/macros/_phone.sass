@@ -1,0 +1,25 @@
+// PHONE
+
+.phone
+  +r(767)
+    padding-bottom: 50px
+
+
+  &__btn
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    +rmin(768)
+      font-size: 12px
+    +rmin(1440)
+      font-size: 16px
+
+    i
+      margin-bottom: 13px
+      +rmin(768)
+        margin-bottom: 7px
+        transform: scale(0.75)
+      +rmin(1440)
+        margin-bottom: 13px
+        transform: scale(1)
