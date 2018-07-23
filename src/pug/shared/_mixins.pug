@@ -11,7 +11,7 @@ mixin icon(name, modClass)
 
 mixin logo(classMod)
   .logotype(
-    class!= (classMod) ? "logotype--": ""
+    class!= (classMod) ? "logotype--" + classMod: ""
   )
     a(
       href="homepage.html"
@@ -28,7 +28,7 @@ mixin logo(classMod)
 
 mixin phone(classMod)
   .phone(
-    class!= (classMod) ? "phone--": ""
+    class!= (classMod) ? "phone--" + classMod: ""
   )
     a(
       href="tel:7 (495) 134 30 21"

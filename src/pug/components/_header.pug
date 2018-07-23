@@ -33,7 +33,7 @@ header.header
     .nav
       ul.nav__list
         each val, idx in navArr
-          li.nav__item
+          li.nav__item(class!= "nav__item-" + idx)
             a(
               href= navArr[idx].href
               title=""
