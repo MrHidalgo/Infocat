@@ -2,14 +2,14 @@ ProjectTitle: Infocat
 
 PageList:
 - file: homepage.html
-  ready: 5
+  ready: 30
 - file: about.html
-  ready: 0
+  ready: 20
 - file: catalog.html
-  ready: 0
+  ready: 20
 - file: contact.html
-  ready: 0
+  ready: 20
 - file: mail.html
-  ready: 0
+  ready: 20
 - file: quick.html
-  ready: 0
+  ready: 20
