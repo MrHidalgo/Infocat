@@ -1,11 +1,47 @@
 $sprite: (
-	logo: (
+	about: (
 		offset-x: 0px,
 		offset-y: 0px,
-		width: 300px,
-		height: 70px,
-		total-width: 300px,
-		total-height: 70px,
+		width: 35px,
+		height: 31px,
+		total-width: 118px,
+		total-height: 73px,
+		image: '../img/sprite.png'
+	),
+	catalog: (
+		offset-x: 0px,
+		offset-y: -41px,
+		width: 33px,
+		height: 32px,
+		total-width: 118px,
+		total-height: 73px,
+		image: '../img/sprite.png'
+	),
+	contact: (
+		offset-x: -45px,
+		offset-y: -38px,
+		width: 20px,
+		height: 35px,
+		total-width: 118px,
+		total-height: 73px,
+		image: '../img/sprite.png'
+	),
+	order: (
+		offset-x: -45px,
+		offset-y: 0px,
+		width: 37px,
+		height: 28px,
+		total-width: 118px,
+		total-height: 73px,
+		image: '../img/sprite.png'
+	),
+	phone: (
+		offset-x: -92px,
+		offset-y: 0px,
+		width: 26px,
+		height: 26px,
+		total-width: 118px,
+		total-height: 73px,
 		image: '../img/sprite.png'
 	),
 );
@@ -64,6 +100,18 @@ $sprite: (
 
 
 
-	.icon-logo {
-		@include sprite(logo)
+	.icon-about {
+		@include sprite(about)
+	}
+	.icon-catalog {
+		@include sprite(catalog)
+	}
+	.icon-contact {
+		@include sprite(contact)
+	}
+	.icon-order {
+		@include sprite(order)
+	}
+	.icon-phone {
+		@include sprite(phone)
 	}

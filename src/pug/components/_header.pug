@@ -1,7 +1,47 @@
 // HEADER :: START
 
+-
+  var navArr = [
+    {
+      href : "about.html",
+      name : "О нас",
+      iconName: "about"
+    },
+    {
+      href : "#",
+      name : "Заказать услугу",
+      iconName: "order"
+    },
+    {
+      href : "catalog.html",
+      name : "Catалог",
+      iconName: "catalog"
+    },
+    {
+      href : "contact.html",
+      name : "Контакты",
+      iconName: "contact"
+    }
+  ];
+
+
 header.header
-  .container
-    .header__wrapper
+  .header__wrapper
+
+    +logo("header")
+
+    .nav
+      ul.nav__list
+        each val, idx in navArr
+          li.nav__item
+            a(
+              href= navArr[idx].href
+              title=""
+              class="nav__btn"
+            )
+              i(class!= "icon-" + navArr[idx].iconName)
+              span!= navArr[idx].name
+
+    +phone("header")
         
 // HEADER :: END

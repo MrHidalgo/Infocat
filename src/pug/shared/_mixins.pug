@@ -7,3 +7,33 @@ mixin icon(name, modClass)
     - var modClass = ' ' + modClass
   svg(class="ico " + name + modClass)
     use(xlink:href= svgSprite + '#' + name)
+
+
+mixin logo(classMod)
+  .logotype(
+    class!= (classMod) ? "logotype--": ""
+  )
+    a(
+      href="homepage.html"
+      title="" 
+      class="logotype__link"
+    )
+      img(
+        src="./img/img-logotype.png"
+        srcset="./img/img-logotype@2x.png 2x"
+        alt="" 
+        title=""
+       )
+
+
+mixin phone(classMod)
+  .phone(
+    class!= (classMod) ? "phone--": ""
+  )
+    a(
+      href="tel:7 (495) 134 30 21"
+      title=""
+      class="phone__btn"
+    )
+      i.icon-phone
+      span!= "+7 (495) 134 30 21"
