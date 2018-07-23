@@ -8,6 +8,15 @@ $sprite: (
 		total-height: 109px,
 		image: '../img/sprite.png'
 	),
+	arrow-right: (
+		offset-x: -107px,
+		offset-y: -42px,
+		width: 9px,
+		height: 13px,
+		total-width: 140px,
+		total-height: 109px,
+		image: '../img/sprite.png'
+	),
 	catalog: (
 		offset-x: -107px,
 		offset-y: 0px,
@@ -111,6 +120,9 @@ $sprite: (
 
 	.icon-about {
 		@include sprite(about)
+	}
+	.icon-arrow-right {
+		@include sprite(arrow-right)
 	}
 	.icon-catalog {
 		@include sprite(catalog)

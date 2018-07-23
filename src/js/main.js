@@ -174,6 +174,60 @@ $(document).ready(function(){
 
     })
 
+    var freeSwiper = new Swiper('.swiper-container.free-slide-js', {
+      // Optional parameters
+      wrapperClass: "swiper-wrapper",
+      slideClass: "swiper-slide",
+      direction: 'horizontal', // 'horizontal' or 'vertical'
+      loop: true,
+      watchOverflow: true,
+      normalizeSlideIndex: true,
+      grabCursor: false,
+      freeMode: true,
+      speed: 300,
+      effect: 'fade', // "slide", "fade", "cube", "coverflow" or "flip"
+      fadeEffect: {
+        crossFade: true
+      },
+      slidesPerView: 1,
+      spaceBetween: 0,
+
+      // If we need pagination
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+        // renderBullet: function (index, className) {
+        //   return `
+        //     <div class="${className}">
+        //       ${index}
+        //     </div>
+        //   `;
+        // }
+      },
+
+      // Navigation arrows
+      // navigation: {
+      //   nextEl: '.swiper-button-next',
+      //   prevEl: '.swiper-button-prev',
+      // },
+
+      // on: {
+      //   "slideChange": function () {
+      //     console.log("slideChange");
+      //   },
+      // }
+    });
+
+    var freeCurrent = $("[main-count-js]"),
+      freeMain = $("[main-len-js]");
+
+    // -2: slider loop, and we remove duplicate
+    freeMain.text((freeSwiper.slides.length - 2) || 0);
+    freeCurrent.text((freeSwiper.realIndex + 1) || 0);
+
+    freeSwiper.on('slideChange', function() {
+      freeCurrent.text((freeSwiper.realIndex + 1) || 0);
+    });
   }
 
   //////////

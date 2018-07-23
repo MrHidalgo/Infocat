@@ -1,0 +1,86 @@
+// FREE
+
+.free
+  position: relative
+  padding-bottom: 214px
+
+
+  &__bg
+    img
+      z-index: 0
+      position: absolute
+      right: 0
+      top: 0
+
+
+  &__wrapper
+    z-index: 1
+    position: relative
+
+
+  &__row
+    display: flex
+
+    &-left,
+    &-right
+      width: 50%
+
+    &-left
+      padding-top: 262px
+
+    &-right
+      img
+        display: block
+        max-width: 100%
+
+
+  &__col
+    width: 100%
+    margin-bottom: 72px
+
+    &-0
+      max-width: 293px
+    &-1
+      max-width: 345px
+    &-2
+      max-width: 315px
+
+
+  &__subtitle
+    position: absolute
+    top: 99px
+    color: rgba($c-dimGray, 0.7)
+    font-size: 20px
+
+
+  &__count
+    display: flex
+    align-items: center
+    position: absolute
+    top: 92px
+    right: 347px
+    color: $c-cornflower
+    font-size: 19px
+
+    span
+      display: inline-block
+      color: $c-white
+      &:nth-child(1)
+        width: 25px
+        text-align: right
+        font-size: 27px
+
+
+  &__title
+    padding-bottom: 28px
+
+
+  &__text
+    padding-bottom: 65px
+    line-height: 1.2
+    color: rgba($c-black, 0.9)
+    font-size: 20px
+
+
+  &__btn
+    margin-bottom: 79px
