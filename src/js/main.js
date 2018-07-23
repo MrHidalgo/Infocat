@@ -174,62 +174,49 @@ $(document).ready(function(){
 
     });
 
-    var freeSwiper = new Swiper('.swiper-container.free-slide-js', {
-      // Optional parameters
-      wrapperClass: "swiper-wrapper",
-      slideClass: "swiper-slide",
-      direction: 'horizontal', // 'horizontal' or 'vertical'
-      loop: true,
-      watchOverflow: true,
-      normalizeSlideIndex: true,
-      grabCursor: false,
-      freeMode: true,
-      speed: 300,
-      effect: 'fade', // "slide", "fade", "cube", "coverflow" or "flip"
-      fadeEffect: {
-        crossFade: true
-      },
-      slidesPerView: 1,
-      spaceBetween: 0,
 
-      // If we need pagination
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-        // renderBullet: function (index, className) {
-        //   return `
-        //     <div class="${className}">
-        //       ${index}
-        //     </div>
-        //   `;
-        // }
-      },
-
-      // Navigation arrows
-      // navigation: {
-      //   nextEl: '.swiper-button-next',
-      //   prevEl: '.swiper-button-prev',
-      // },
-
-      // on: {
-      //   "slideChange": function () {
-      //     console.log("slideChange");
-      //   },
-      // }
-    });
-
-    if ($(".free-slide-js").length > 0) {
-      var freeCurrent = $("[main-count-js]"),
-        freeMain = $("[main-len-js]");
-
-      // -2: slider loop, and we remove duplicate
-      freeMain.text((freeSwiper.slides.length - 2) || 0);
-      freeCurrent.text((freeSwiper.realIndex + 1) || 0);
-
-      freeSwiper.on('slideChange', function() {
-        freeCurrent.text((freeSwiper.realIndex + 1) || 0);
-      });
+    function swiperOption() {
+      return {
+        wrapperClass: "swiper-wrapper",
+        slideClass: "swiper-slide",
+        direction: 'horizontal',
+        loop: true,
+        watchOverflow: true,
+        normalizeSlideIndex: true,
+        grabCursor: false,
+        freeMode: true,
+        speed: 300,
+        effect: 'fade',
+        fadeEffect: {
+          crossFade: true
+        },
+        slidesPerView: 1,
+        spaceBetween: 0,
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        }
+      }
     }
+    var freeSwiper = new Swiper('.swiper-container.free-slide-js', swiperOption());
+    var aroundSwiper = new Swiper('.swiper-container.around-slide-js', swiperOption());
+
+    function changeCount(classNameSlide, swiperName, mainCountName, mainLenName) {
+      if ($(classNameSlide).length > 0) {
+        var current = $(mainCountName + " [main-count-js]"),
+          len = $(mainLenName + " [main-len-js]");
+
+        // -2: slider loop, and we remove duplicate
+        len.text((swiperName.slides.length - 2) || 0);
+        current.text((swiperName.realIndex + 1) || 0);
+
+        swiperName.on('slideChange', function() {
+          current.text((swiperName.realIndex + 1) || 0);
+        });
+      }
+    }
+    changeCount(".free-slide-js", freeSwiper, "[free-count-js]", "[free-count-js]");
+    changeCount(".around-slide-js", aroundSwiper, "[around-count-js]", "[around-count-js]");
   }
 
   //////////
