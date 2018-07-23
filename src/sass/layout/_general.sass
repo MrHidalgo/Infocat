@@ -47,26 +47,22 @@ body, html
     padding-left: 166px
 
 .container
-  max-width: 1200px
   width: 100%
-  margin-left: auto
-  margin-right: auto
-  padding-left: 40px
-  padding-right: 40px
+  max-width: (1459px + 15px + 196px)
+  //margin-left: auto
+  //margin-right: auto
+  padding-left: 196px
+  padding-right: 15px
+  //padding-right: 40px
+
+  &-fluid
+    max-width: 100%
+    padding-left: 196px
+  &-inner
+    padding-left: 0
+    max-width: (1459px +15px)
 
 +r($mobile)
   .container
-    padding-left: 20px
-    padding-right: 20px
-
-// REMOVE FOR PRODUCTION !
-.dev-bp-debug
-  background: black
-  position: fixed
-  top: 0
-  right: 0
-  z-index: 9999
-  color: white
-  padding: 5px
-  font-size: 12px
-  border-bottom-left-radius: 5px
+    //padding-left: 20px
+    //padding-right: 20px

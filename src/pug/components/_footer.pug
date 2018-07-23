@@ -1,7 +1,28 @@
 // FOOTER :: START
 
 footer.footer
-  .container
+  .container-fluid
     .footer__wrapper
+
+      .container-inner
+
+        .footer__row
+          .footer__col.footer__col-0
+            a.footer__email(
+              href="mailto:sales@info-cat.ru"
+              title=""
+              class=""
+            )!= "sales@info-cat.ru"
+
+          .footer__col.footer__col-1
+            p.footer__address!= "Москва, ул. Енисейская д. 1, стр. 8, оф. 105"
+
+          .footer__col.footer__col-2
+            p.footer__copyright!= "© 2018 infocat"
+
+          .footer__col.footer__col-3
+            p.footer__developBy
+              != "Разработка сайта"
+            i.icon-shogo-logo
 
 // FOOTER :: END
