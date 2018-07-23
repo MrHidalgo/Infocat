@@ -172,12 +172,7 @@ $(document).ready(function(){
         });
       }
 
-    })
-
-    // other individual sliders goes here
-    $('[js-myCustomSlider]').slick({
-
-    })
+    });
 
     var freeSwiper = new Swiper('.swiper-container.free-slide-js', {
       // Optional parameters
@@ -223,7 +218,7 @@ $(document).ready(function(){
       // }
     });
 
-    if (freeSwiper.length > 0) {
+    if ($(".free-slide-js").length > 0) {
       var freeCurrent = $("[main-count-js]"),
         freeMain = $("[main-len-js]");
 
