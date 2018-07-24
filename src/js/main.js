@@ -24,8 +24,8 @@ $(document).ready(function(){
   ////////////
   function pageReady(){
     legacySupport();
-    updateHeaderActiveClass();
-    initHeaderScroll();
+    // updateHeaderActiveClass();
+    // initHeaderScroll();
 
     initPopups();
     initSliders();
@@ -34,6 +34,7 @@ $(document).ready(function(){
     initLazyLoad();
 
     hamburgerMenu();
+    projectBlockBtn();
 
     // development helper
     _window.on('resize', debounce(setBreakpoint, 200))
@@ -87,33 +88,6 @@ $(document).ready(function(){
     })
 
 
-  // HEADER SCROLL
-  // add .header-static for .page or body
-  // to disable sticky header
-  function initHeaderScroll(){
-    _window.on('scroll', throttle(function(e) {
-      var vScroll = _window.scrollTop();
-      var header = $('.header').not('.header--static');
-      var headerHeight = header.height();
-      var firstSection = _document.find('.page__content div:first-child()').height() - headerHeight;
-      var visibleWhen = Math.round(_document.height() / _window.height()) >  2.5
-
-      if (visibleWhen){
-        if ( vScroll > headerHeight ){
-          header.addClass('is-fixed');
-        } else {
-          header.removeClass('is-fixed');
-        }
-        if ( vScroll > firstSection ){
-          header.addClass('is-fixed-visible');
-        } else {
-          header.removeClass('is-fixed-visible');
-        }
-      }
-    }, 10));
-  }
-
-
   // HAMBURGER TOGGLER
   function hamburgerMenu() {
     $("[hamburger-js]").on("click", function(e) {
@@ -128,17 +102,14 @@ $(document).ready(function(){
     $("body, html").removeClass("is-hide-scroll")
   }
 
-  // SET ACTIVE CLASS IN HEADER
-  // * could be removed in production and server side rendering when header is inside barba-container
-  function updateHeaderActiveClass(){
-    $('.header__menu li').each(function(i,val){
-      if ( $(val).find('a').attr('href') == window.location.pathname.split('/').pop() ){
-        $(val).addClass('is-active');
-      } else {
-        $(val).removeClass('is-active')
-      }
+
+  // PROJECT BLOCK BTN
+  function projectBlockBtn() {
+    $(".project__block-btn").on("click", function(e) {
+      $(e.currentTarget).toggleClass("is-active");
     });
   }
+
 
   //////////
   // SLIDERS
@@ -198,8 +169,33 @@ $(document).ready(function(){
         }
       }
     }
+    function swiperOptionSlide() {
+      return {
+        wrapperClass: "swiper-wrapper",
+        slideClass: "swiper-slide",
+        direction: 'horizontal',
+        loop: false,
+        watchOverflow: true,
+        normalizeSlideIndex: true,
+        grabCursor: false,
+        freeMode: true,
+        speed: 300,
+        effect: 'slide',
+        slidesPerView: 'auto',
+        spaceBetween: 30,
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+        navigation: {
+          nextEl: '.project__button-next',
+          prevEl: '.project__button-prev',
+        },
+      }
+    }
     var freeSwiper = new Swiper('.swiper-container.free-slide-js', swiperOption());
     var aroundSwiper = new Swiper('.swiper-container.around-slide-js', swiperOption());
+    var projectSwiper = new Swiper('.swiper-container.project-slide-js', swiperOptionSlide());
 
     function changeCount(classNameSlide, swiperName, mainCountName, mainLenName) {
       if ($(classNameSlide).length > 0) {
