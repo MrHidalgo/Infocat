@@ -53,6 +53,15 @@ $sprite: (
 		total-height: 109px,
 		image: '../img/sprite.png'
 	),
+	play: (
+		offset-x: -66px,
+		offset-y: -74px,
+		width: 20px,
+		height: 26px,
+		total-width: 140px,
+		total-height: 109px,
+		image: '../img/sprite.png'
+	),
 	shogo-logo: (
 		offset-x: 0px,
 		offset-y: 0px,
@@ -135,6 +144,9 @@ $sprite: (
 	}
 	.icon-phone {
 		@include sprite(phone)
+	}
+	.icon-play {
+		@include sprite(play)
 	}
 	.icon-shogo-logo {
 		@include sprite(shogo-logo)

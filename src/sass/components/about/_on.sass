@@ -1,0 +1,87 @@
+// ON
+
+.on
+  position: relative
+  min-height: 679px
+  padding-top: 102px
+  padding-bottom: 65px
+
+
+  &__subtitle
+    padding-bottom: 60px
+    color: $c-dimGray
+    font-size: 20px
+
+
+  &__title
+    padding-bottom: 53px
+
+
+  &__row
+    z-index: 1
+    position: relative
+    display: flex
+    font-size: 18px
+    font-weight: 300
+
+    > div
+      width: 100%
+      max-width: 439px
+
+      p
+        line-height: 1.5
+
+    &-left
+      margin-right: 111px
+
+
+  &__img
+    display: block
+    max-width: 100%
+    height: auto
+
+    &-wrap
+      position: absolute
+      top: 194px
+      right: 100px
+      width: auto
+      height: auto
+
+    &-btn
+      z-index: 1
+      position: absolute
+      display: flex
+      align-items: center
+      top: 50%
+      left: 50%
+      transform: translate(-20%, -50%)
+      width: auto
+
+      a
+        cursor: pointer
+        display: flex
+        align-items: center
+        justify-content: center
+        width: 112px
+        height: 112px
+        margin-right: 41px
+        border-radius: 100%
+        border: 1px solid $c-white
+        background-color: transparent
+        +transition(background-color)
+
+        &:hover
+          background-color: rgba($c-white, 0.15)
+          +transition(background-color)
+
+      p
+        color: $c-white
+
+        span
+          display: block
+          font-size: 18px
+
+          &:last-child
+            margin-top: 5px
+
+
