@@ -9,13 +9,14 @@ mixin icon(name, modClass)
     use(xlink:href= svgSprite + '#' + name)
 
 
-mixin btn(classMod, text)
+mixin btn(classMod, text, textData, idx)
   a.btn(
     href="#"
     title=""
+    data-idx!= idx
     class= (classMod) ? classMod : ""
   )
-    span!= text
+    span(data-txt!= textData)!= text
     i.icon-arrow-right
 
 

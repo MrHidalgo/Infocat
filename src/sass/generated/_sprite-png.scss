@@ -1,74 +1,101 @@
 $sprite: (
 	about: (
-		offset-x: 0px,
+		offset-x: -137px,
 		offset-y: -33px,
 		width: 35px,
 		height: 31px,
-		total-width: 140px,
-		total-height: 109px,
+		total-width: 234px,
+		total-height: 119px,
 		image: '../img/sprite.png'
 	),
 	arrow-right: (
-		offset-x: -107px,
-		offset-y: -42px,
+		offset-x: -216px,
+		offset-y: -74px,
 		width: 9px,
 		height: 13px,
-		total-width: 140px,
-		total-height: 109px,
+		total-width: 234px,
+		total-height: 119px,
 		image: '../img/sprite.png'
 	),
 	catalog: (
-		offset-x: -107px,
-		offset-y: 0px,
+		offset-x: -137px,
+		offset-y: -74px,
 		width: 33px,
 		height: 32px,
-		total-width: 140px,
-		total-height: 109px,
+		total-width: 234px,
+		total-height: 119px,
 		image: '../img/sprite.png'
 	),
 	contact: (
-		offset-x: 0px,
-		offset-y: -74px,
+		offset-x: -58px,
+		offset-y: -68px,
 		width: 20px,
 		height: 35px,
-		total-width: 140px,
-		total-height: 109px,
+		total-width: 234px,
+		total-height: 119px,
+		image: '../img/sprite.png'
+	),
+	desc-0: (
+		offset-x: 0px,
+		offset-y: 0px,
+		width: 58px,
+		height: 58px,
+		total-width: 234px,
+		total-height: 119px,
+		image: '../img/sprite.png'
+	),
+	desc-1: (
+		offset-x: -68px,
+		offset-y: 0px,
+		width: 59px,
+		height: 45px,
+		total-width: 234px,
+		total-height: 119px,
+		image: '../img/sprite.png'
+	),
+	desc-2: (
+		offset-x: 0px,
+		offset-y: -68px,
+		width: 48px,
+		height: 51px,
+		total-width: 234px,
+		total-height: 119px,
 		image: '../img/sprite.png'
 	),
 	order: (
-		offset-x: -45px,
+		offset-x: -182px,
 		offset-y: -33px,
 		width: 37px,
 		height: 28px,
-		total-width: 140px,
-		total-height: 109px,
+		total-width: 234px,
+		total-height: 119px,
 		image: '../img/sprite.png'
 	),
 	phone: (
-		offset-x: -30px,
+		offset-x: -180px,
 		offset-y: -74px,
 		width: 26px,
 		height: 26px,
-		total-width: 140px,
-		total-height: 109px,
+		total-width: 234px,
+		total-height: 119px,
 		image: '../img/sprite.png'
 	),
 	play: (
-		offset-x: -66px,
-		offset-y: -74px,
+		offset-x: -88px,
+		offset-y: -68px,
 		width: 20px,
 		height: 26px,
-		total-width: 140px,
-		total-height: 109px,
+		total-width: 234px,
+		total-height: 119px,
 		image: '../img/sprite.png'
 	),
 	shogo-logo: (
-		offset-x: 0px,
+		offset-x: -137px,
 		offset-y: 0px,
 		width: 97px,
 		height: 23px,
-		total-width: 140px,
-		total-height: 109px,
+		total-width: 234px,
+		total-height: 119px,
 		image: '../img/sprite.png'
 	),
 );
@@ -138,6 +165,15 @@ $sprite: (
 	}
 	.icon-contact {
 		@include sprite(contact)
+	}
+	.icon-desc-0 {
+		@include sprite(desc-0)
+	}
+	.icon-desc-1 {
+		@include sprite(desc-1)
+	}
+	.icon-desc-2 {
+		@include sprite(desc-2)
 	}
 	.icon-order {
 		@include sprite(order)

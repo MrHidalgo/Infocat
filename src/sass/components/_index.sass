@@ -8,12 +8,14 @@
 // BTN
 // ===============
 .btn
-  display: flex
+  white-space: nowrap
+  position: relative
+  display: inline-flex
   align-items: center
   justify-content: center
-  width: 100%
-  max-width: 200px
   height: 50px
+  padding-left: 40px
+  padding-right: 40px
   border-radius: 2em
   border: 1px solid $c-navyBlue
   background-color: transparent
@@ -23,6 +25,30 @@
 
   span
     margin-right: 27px
+
+  i
+    position: relative
+
+    &:after
+      content: ""
+      position: absolute
+      top: -19px
+      left: -21px
+      width: 48px
+      height: 48px
+      border-radius: 100%
+      border: 1px solid transparent
+      background-color: transparent
+
+  &.is-active
+    border-color: transparent
+
+    i
+      transform: rotate(-90deg)
+      &:after
+        border-color: $c-navyBlue
+
+
 
 
 // p WITH-DOT
@@ -43,3 +69,29 @@
     height: 8px
     border-radius: 100%
     background-color: $c-navyBlue
+
+
+// SWIPER CUSTOM BTN
+.custom
+  &__button
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 55px
+    height: 55px
+    border-radius: 100%
+    border: 1px solid $c-navyBlue
+
+    &.swiper-button-disabled
+      opacity: 0.5
+
+    &-wrap
+      display: flex
+      margin-right: 100px
+
+    &-prev
+      margin-right: 12px
+      i
+        transform: rotate(-180deg)
+    &-next
+      margin-left: 12px

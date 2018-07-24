@@ -1,0 +1,213 @@
+// DESCRIPTION :: START
+
+
+-
+  var descArr0 = [
+    "Антивирусное программное обеспечение",
+    "Защита Web приложений",
+    "Аудит уязвимостей",
+    "Защита критических данных",
+    "Сетевая безопасность",
+    "Управление доступом",
+    "Защита от утечек данных",
+    "Шифрование данных"
+  ];
+  var descArr1 = [
+    "Резервное копирование",
+    "Отказоустойчивость систем",
+    "Виртуализация",
+    "Архивирование данных",
+    "Управление данными"
+  ];
+  var descArr2 = [
+    "Графика и дизайн",
+    "",
+    "Офисные программы",
+    "",
+    "Программы для обработки аудио и видео"
+  ];
+
+
+mixin descBlock(classMod, iconName, title, badgeCount, descArr)
+  .description__row(
+    class!= (classMod) ? "description__row-" + classMod: ""
+  )
+    .description__row-header
+      .description__row-title
+        p
+          i(class!= "icon-" + iconName)
+          span.title!= title
+      .description__row-badge
+        p!= "Услуга <span>" + badgeCount + "</span>/3"
+
+    .description__row-body
+      each val, idx in descArr
+        p!= val
+
+    .description__row-logo
+
+      .custom__button-wrap
+        a.custom__button.custom__button-prev.descLogo__button-prev(
+          href="#" title="" class=""
+        )
+          i.icon-arrow-right
+        a.custom__button.custom__button-next.descLogo__button-next(
+          href="#" title="" class=""
+        )
+          i.icon-arrow-right
+
+      .swiper-container.desc-slideLogo-js
+        .swiper-wrapper
+          .swiper-slide
+            img(
+              src="./img/img-logo-0__desc.png"
+              srcset="./img/img-logo-0__desc@2x.png 2x"
+              alt=""
+              title=""
+             )
+          .swiper-slide
+            img(
+              src="./img/img-logo-1__desc.png"
+              srcset="./img/img-logo-1__desc@2x.png 2x"
+              alt=""
+              title=""
+             )
+          .swiper-slide
+            img(
+              src="./img/img-logo-2__desc.png"
+              srcset="./img/img-logo-2__desc@2x.png 2x"
+              alt=""
+              title=""
+             )
+          .swiper-slide
+            img(
+              src="./img/img-logo-3__desc.png"
+              srcset="./img/img-logo-3__desc@2x.png 2x"
+              alt=""
+              title=""
+             )
+          .swiper-slide
+            img(
+              src="./img/img-logo-4__desc.png"
+              srcset="./img/img-logo-4__desc@2x.png 2x"
+              alt=""
+              title=""
+             )
+          .swiper-slide
+            img(
+              src="./img/img-logo-2__desc.png"
+              srcset="./img/img-logo-2__desc@2x.png 2x"
+              alt=""
+              title=""
+             )
+          .swiper-slide
+            img(
+              src="./img/img-logo-3__desc.png"
+              srcset="./img/img-logo-3__desc@2x.png 2x"
+              alt=""
+              title=""
+             )
+          .swiper-slide
+            img(
+              src="./img/img-logo-4__desc.png"
+              srcset="./img/img-logo-4__desc@2x.png 2x"
+              alt=""
+              title=""
+             )
+        .swiper-pagination
+
+    .description__row-cert
+      p!= "Мы являемся сертифицированными специалистами по интеграции данных решений"
+      +btn("description__row-btn", "Посмотреть сертификаты", "Скрыть сертификаты", classMod)
+
+      div(description__cert-js)
+        .custom__button-wrap
+          a.custom__button.custom__button-prev.descCert__button-prev(
+            href="#" title="" class=""
+          )
+            i.icon-arrow-right
+          a.custom__button.custom__button-next.descCert__button-next(
+            href="#" title="" class=""
+          )
+            i.icon-arrow-right
+
+        .swiper-container.desc-slideCert-js
+          .swiper-wrapper
+            .swiper-slide
+              a(href="./img/img-cert-0__desc.png" data-lightbox="cert")
+                img(
+                  src="./img/img-cert-0__desc.png"
+                  srcset="./img/img-cert-0__desc@2x.png 2x"
+                  alt=""
+                  title=""
+                 )
+            .swiper-slide
+              a(href="./img/img-cert-1__desc.png" data-lightbox="cert")
+                img(
+                  src="./img/img-cert-1__desc.png"
+                  srcset="./img/img-cert-1__desc@2x.png 2x"
+                  alt=""
+                  title=""
+                 )
+            .swiper-slide
+              a(href="./img/img-cert-2__desc.png" data-lightbox="cert")
+                img(
+                  src="./img/img-cert-2__desc.png"
+                  srcset="./img/img-cert-2__desc@2x.png 2x"
+                  alt=""
+                  title=""
+                 )
+            .swiper-slide
+              a(href="./img/img-cert-3__desc.png" data-lightbox="cert")
+                img(
+                  src="./img/img-cert-3__desc.png"
+                  srcset="./img/img-cert-3__desc@2x.png 2x"
+                  alt=""
+                  title=""
+                 )
+            .swiper-slide
+              a(href="./img/img-cert-0__desc.png" data-lightbox="cert")
+                img(
+                  src="./img/img-cert-0__desc.png"
+                  srcset="./img/img-cert-0__desc@2x.png 2x"
+                  alt=""
+                  title=""
+                 )
+            .swiper-slide
+              a(href="./img/img-cert-1__desc.png" data-lightbox="cert")
+                img(
+                  src="./img/img-cert-1__desc.png"
+                  srcset="./img/img-cert-1__desc@2x.png 2x"
+                  alt=""
+                  title=""
+                 )
+            .swiper-slide
+              a(href="./img/img-cert-2__desc.png" data-lightbox="cert")
+                img(
+                  src="./img/img-cert-2__desc.png"
+                  srcset="./img/img-cert-2__desc@2x.png 2x"
+                  alt=""
+                  title=""
+                 )
+            .swiper-slide
+              a(href="./img/img-cert-3__desc.png" data-lightbox="cert")
+                img(
+                  src="./img/img-cert-3__desc.png"
+                  srcset="./img/img-cert-3__desc@2x.png 2x"
+                  alt=""
+                  title=""
+                 )
+          .swiper-pagination
+
+
+section.description
+  .description__wrapper
+
+    p.description__subtitle!= "Интегрируем программные решения"
+
+    +descBlock("0", "desc-0", "Информационная безопасность", "1", descArr0)
+    +descBlock("1", "desc-1", "Хранение данных", "2", descArr1)
+    +descBlock("2", "desc-2", "Прикладные программы", "3", descArr2)
+
+
+// DESCRIPTION :: END

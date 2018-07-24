@@ -25,6 +25,7 @@
     "barba.js": "luruke/barba.js#^1.0.0",
     "jquery-lazy": "^1.7.7",
     "animejs": "^2.2.0",
-    "swiper": "^4.3.3"
+    "swiper": "^4.3.3",
+    "lightbox2": "lightbox#^2.10.0"
   }
 }

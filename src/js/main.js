@@ -35,6 +35,7 @@ $(document).ready(function(){
 
     hamburgerMenu();
     projectBlockBtn();
+    initLightbox();
 
     // development helper
     _window.on('resize', debounce(setBreakpoint, 200))
@@ -111,6 +112,16 @@ $(document).ready(function(){
   }
 
 
+  // LIGHTBOX
+  function initLightbox() {
+    lightbox.option({
+      'resizeDuration': 300,
+      'wrapAround': true,
+      'showImageNumberLabel': false
+    })
+  }
+
+
   //////////
   // SLIDERS
   //////////
@@ -169,33 +180,35 @@ $(document).ready(function(){
         }
       }
     }
-    function swiperOptionSlide() {
+    function swiperOptionSlide(loopOpt, slidesPerViewOpt, nextBtnName, prevBtnName) {
       return {
         wrapperClass: "swiper-wrapper",
         slideClass: "swiper-slide",
         direction: 'horizontal',
-        loop: false,
+        loop: loopOpt,
         watchOverflow: true,
         normalizeSlideIndex: true,
         grabCursor: false,
         freeMode: true,
         speed: 300,
         effect: 'slide',
-        slidesPerView: 'auto',
+        slidesPerView: slidesPerViewOpt,
         spaceBetween: 30,
         pagination: {
           el: '.swiper-pagination',
           clickable: true,
         },
         navigation: {
-          nextEl: '.project__button-next',
-          prevEl: '.project__button-prev',
+          nextEl: nextBtnName,
+          prevEl: prevBtnName,
         },
       }
     }
     var freeSwiper = new Swiper('.swiper-container.free-slide-js', swiperOption());
     var aroundSwiper = new Swiper('.swiper-container.around-slide-js', swiperOption());
-    var projectSwiper = new Swiper('.swiper-container.project-slide-js', swiperOptionSlide());
+    var projectSwiper = new Swiper('.swiper-container.project-slide-js', swiperOptionSlide(false, "auto", ".project__button-next", ".project__button-prev"));
+    var descLogoSwiper = new Swiper('.swiper-container.desc-slideLogo-js', swiperOptionSlide(false, "5", ".descLogo__button-next", ".descLogo__button-prev"));
+    var descCertSwiper = new Swiper('.swiper-container.desc-slideCert-js', swiperOptionSlide(false, "4", ".descCert__button-next", ".descCert__button-prev"));
 
     function changeCount(classNameSlide, swiperName, mainCountName, mainLenName) {
       if ($(classNameSlide).length > 0) {
@@ -213,6 +226,41 @@ $(document).ready(function(){
     }
     changeCount(".free-slide-js", freeSwiper, "[free-count-js]", "[free-count-js]");
     changeCount(".around-slide-js", aroundSwiper, "[around-count-js]", "[around-count-js]");
+
+
+    // DESCRIPTION CERT
+    function descCertBtn() {
+      $(".description__row-btn").on("click", function(e) {
+        var elem = $(e.currentTarget),
+          elemIdx = elem.attr("data-idx"),
+          elemSpanContainer = elem.find("span"),
+          elemSpanCurrText = elemSpanContainer.text(),
+          elemDataAttr = elemSpanContainer.attr("data-txt");
+
+        var parentContainer = elem.closest(".description__row-cert"),
+          certContainer = parentContainer.find("[description__cert-js]");
+
+        if(elem.hasClass("is-active")) {
+          $(e.currentTarget).removeClass("is-active");
+          elemSpanContainer.text(elem.attr("data-curr"));
+          certContainer.removeClass("is-show");
+        } else {
+          $(e.currentTarget).addClass("is-active");
+          elem.attr("data-curr", elemSpanCurrText);
+          elemSpanContainer.text(elemDataAttr);
+          certContainer.addClass("is-show");
+        }
+
+        var btnPrevName = ".description__row-" + elemIdx + " .descCert__button-prev",
+          btnNextName = ".description__row-" + elemIdx + " .descCert__button-next";
+
+        descCertSwiper = new Swiper(
+          '.swiper-container.desc-slideCert-js',
+          swiperOptionSlide(false, "4", btnNextName, btnPrevName)
+        );
+      });
+    }
+    descCertBtn();
   }
 
   //////////

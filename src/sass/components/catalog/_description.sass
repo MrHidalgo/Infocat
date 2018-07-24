@@ -1,0 +1,144 @@
+// DESCRIPTION
+
+.description
+  padding-top: 102px
+  padding-bottom: 78px
+
+  &__subtitle
+    padding-bottom: 90px
+    color: $c-dimGray
+    font-size: 20px
+
+
+  &__row
+    padding-bottom: 122px
+
+
+    &-header
+      display: flex
+      align-items: center
+      justify-content: space-between
+      padding-bottom: 14px
+      padding-right: 100px
+
+
+    &-title
+      p
+        display: flex
+        align-items: center
+
+        i
+          margin-right: 50px
+
+
+    &-badge
+      opacity: 0.7
+      color: $c-dimGray
+      font-size: 20px
+
+      span
+        padding-left: 5px
+        font-size: 32px
+
+
+    &-body
+      display: flex
+      flex-wrap: wrap
+      padding-right: 100px
+
+      p
+        width: 100%
+        max-width: 555px
+        padding-top: 58px
+        font-size: 20px
+        font-weight: 300
+
+
+    &-logo
+      padding-right: 100px
+
+      .custom__button-wrap
+        justify-content: flex-end
+        margin-right: 0
+        margin-top: 15px
+        margin-bottom: 26px
+
+      .swiper
+        &-pagination
+          display: none
+
+        &-slide
+          cursor: pointer
+          display: flex
+          align-items: center
+          justify-content: center
+          width: 263px
+          height: 220px
+          border-radius: 10px
+          background-color: $c-white
+          box-shadow: 0 0 9.1px 0.9px rgba(19, 21, 22, 0.08)
+
+          &:hover
+            img
+              filter: grayscale(0)
+              +transition(filter)
+
+          img
+            display: block
+            max-width: 100%
+            height: auto
+            filter: grayscale(1)
+            +transition(filter)
+
+
+    &-cert
+      p
+        padding-bottom: 33px
+        color: $c-dimGray
+        font-size: 20px
+
+      .btn
+        margin-bottom: 37px
+
+      > div
+        display: none
+        padding-top: 28px
+        padding-bottom: 28px
+        box-shadow: inset 0 0 100px 10px rgba($c-black, 0.15)
+
+        &.is-show
+          display: block
+
+        .custom__button-wrap
+          justify-content: flex-end
+          margin-bottom: 26px
+
+        .swiper
+          &-pagination
+            display: none
+
+          &-slide
+            overflow: hidden
+            cursor: pointer
+            position: relative
+            width: 346px
+            height: 347px
+            border-radius: 10px
+            background-color: $c-white
+            box-shadow: 0 0 16.2px 1.8px rgba(26, 28, 29, 0.09)
+
+            &:hover
+              img
+                transform: scale(1.1)
+                +transition(transform)
+
+            img
+              position: absolute
+              top: 0
+              left: 0
+              display: block
+              width: 100%
+              height: 100%
+              object-fit: cover
+              object-position: center
+              +transition(transform)
