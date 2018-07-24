@@ -4,7 +4,7 @@ PageList:
 - file: homepage.html
   ready: 45
 - file: about.html
-  ready: 25
+  ready: 45
 - file: catalog.html
   ready: 15
 - file: contact.html
