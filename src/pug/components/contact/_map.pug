@@ -15,11 +15,21 @@ section.map
 
     p.with-dot
       span!= "E-mail"
-      span!= "sales@info-cat.ru"
+      span
+        a(
+          href="mailto:sales@info-cat.ru"
+          title=""
+          class=""
+        )!= "sales@info-cat.ru"
 
     p.with-dot
       span!= "Телефон"
-      span!= "+7 (495) 134 30 21"
+      span
+        a(
+          href="tel:+7 (495) 134 30 21"
+          title=""
+          class=""
+        )!= "+7 (495) 134 30 21"
 
     p.with-dot
       span!= "График работы"

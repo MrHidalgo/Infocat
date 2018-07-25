@@ -31,7 +31,12 @@ section.legal
 
         .legal__col-right
           p.legal__col-title!= "Телефон:"
-          p.legal__col-info!= "+7 (495) 134 30 21"
+          p.legal__col-info
+            a(
+              href="tel:+7 (495) 134 30 21"
+              title=""
+              class=""
+            )!= "+7 (495) 134 30 21"
 
       .legal__col.legal__col-3
         .legal__col-left
@@ -40,7 +45,12 @@ section.legal
 
         .legal__col-right
           p.legal__col-title!= "E-mail:"
-          p.legal__col-info!= "info@info-cat.ru"
+          p.legal__col-info
+            a(
+              href="mailto:info@info-cat.ru"
+              title=""
+              class=""
+            )!= "info@info-cat.ru"
 
 
 // LEGAL :: END
