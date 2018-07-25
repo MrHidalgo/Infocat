@@ -19,6 +19,12 @@
       background-color: transparent
       +transition(border-color)
 
+      &:hover,
+      &:focus
+        &:after
+          background-color: rgba($c-navyBlue, 0.5)
+          +transition(background-color)
+
       &:after
         content: ""
         position: absolute
