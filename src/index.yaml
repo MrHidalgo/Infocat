@@ -2,9 +2,9 @@ ProjectTitle: Infocat
 
 PageList:
 - file: homepage.html
-  ready: 55
+  ready: 60
 - file: about.html
-  ready: 55
+  ready: 70
 - file: catalog.html
   ready: 70
 - file: contact.html

@@ -9,10 +9,14 @@
     align-items: center
     justify-content: space-between
     padding-bottom: 50px
+    +r(1199)
+      padding-bottom: 0
 
 
   &__btn
     margin-top: 8px
+    +r(767)
+      margin-top: 30px
 
 
   &__block
@@ -22,16 +26,22 @@
     border-top-right-radius: 10px
     background-color: $c-white
     box-shadow: 0 0 9.1px 0.9px rgba(19, 21, 22, 0.08)
+    +r(767)
+      padding: 35px 25px
 
     &-body
       border-top: 1px solid $c-gainsboro
       padding-top: 16px
       padding-bottom: 16px
 
+
     &-title
       padding-bottom: 23px
       font-size: 24px
       font-weight: 300
+      +r(767)
+        font-size: 18px
+
 
     &-text
       padding-right: 48px
@@ -39,6 +49,10 @@
       color: $c-dimGray
       font-size: 18px
       font-weight: 300
+      +r(767)
+        padding-right: 0
+        font-size: 14px
+
 
     &-btn
       cursor: pointer
@@ -69,8 +83,10 @@
       align-items: center
       justify-content: center
       text-align: center
-      transform: translateX(-26px)
       +transition(height, min-height)
+      +rmin(768)
+        transform: translateX(-26px)
+
 
       &.is-open
         opacity: 1
@@ -96,10 +112,34 @@
 
 
   .swiper
+    &-container
+      +r(1199)
+        padding-top: 100px
+      +r(767)
+        padding-top: 50px
     &-pagination
-      //display: none
+      +r(767)
+        transform: translate(0)
+      +rmin(768)
+        justify-content: flex-end
+        bottom: auto
+        top: 30px
+        left: auto
+        right: 0
+        height: 36px
+        transform: translate(0)
+      &-bullet
+        margin: 0 9px !important
+      +rmin(1200)
+        display: none
 
     &-slide
       width: 100%
       max-width: 407px
+      +rmin(320)
+        min-width: 270px
+      +rmin(768)
+        min-width: 350px
+      +rmin(1200)
+        min-width: 400px
 

@@ -126,7 +126,7 @@ $(document).ready(function(){
         freeMode: true,
         speed: 300,
         effect: 'slide',
-        slidesPerView: parseInt(slidesPerViewOpt),
+        slidesPerView: slidesPerViewOpt,
         spaceBetween: 30,
         breakpoints: {
           576: {
