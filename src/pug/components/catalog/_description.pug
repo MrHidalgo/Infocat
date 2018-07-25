@@ -203,7 +203,7 @@ mixin descBlock(classMod, iconName, title, badgeCount, descArr)
 section.description
   .description__wrapper
 
-    p.description__subtitle!= "Интегрируем программные решения"
+    p.description__subtitle.subtitle!= "Интегрируем программные решения"
 
     +descBlock("0", "desc-0", "Информационная безопасность", "1", descArr0)
     +descBlock("1", "desc-1", "Хранение данных", "2", descArr1)

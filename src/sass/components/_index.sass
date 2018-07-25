@@ -1,8 +1,28 @@
 // TITLE
 // ===============
 .title
-  font-size: 65px
   font-weight: 300
+  +rmin(320)
+    font-size: 24px
+  +rmin(768)
+    font-size: 30px
+  +rmin(992)
+    font-size: 36px
+  +rmin(1200)
+    font-size: 45px
+  +rmin(1440)
+    font-size: 51px
+  +rmin(1920)
+    font-size: 65px
+
+.subtitle
+  color: rgba($c-dimGray, 0.7)
+  +rmin(320)
+    font-size: 14px
+  +rmin(992)
+    font-size: 17px
+  +rmin(1200)
+    font-size: 20px
 
 
 // BTN
@@ -129,6 +149,8 @@
 // FORM
 .form
   padding-top: 20px
+  +rmin(768)
+    padding-right: 20px
 
 
   &__field
@@ -156,13 +178,19 @@
     &--input
       max-width: 367px
       height: 46px
+      +r(575)
+        max-width: 100%
     &--textarea
       max-width: 729px
       height: 287px
+      +r(575)
+        max-width: 100%
     &--info
       p
         width: 100%
         max-width: 469px
+        +r(575)
+          max-width: 100%
 
         a
           color: $c-navyBlue
@@ -179,23 +207,48 @@
     border: none
     border-bottom: 2px solid $c-veryLightGrey
     background-color: transparent
-    font-size: 20px
     font-weight: 300
     font-family: "Muller", sans-serif
     +transition(color, border-color)
+    +rmin(320)
+      font-size: 14px
+    +rmin(992)
+      font-size: 17px
+    +rmin(1440)
+      font-size: 20px
 
     &::-webkit-input-placeholder
       color: $c-black
-      font-size: 20px
+      +rmin(320)
+        font-size: 14px
+      +rmin(992)
+        font-size: 17px
+      +rmin(1440)
+        font-size: 20px
     &::-moz-placeholder
       color: $c-black
-      font-size: 20px
+      +rmin(320)
+        font-size: 14px
+      +rmin(992)
+        font-size: 17px
+      +rmin(1440)
+        font-size: 20px
     &:-ms-input-placeholder
       color: $c-black
-      font-size: 20px
+      +rmin(320)
+        font-size: 14px
+      +rmin(992)
+        font-size: 17px
+      +rmin(1440)
+        font-size: 20px
     &:-moz-placeholder
       color: $c-black
-      font-size: 20px
+      +rmin(320)
+        font-size: 14px
+      +rmin(992)
+        font-size: 17px
+      +rmin(1440)
+        font-size: 20px
 
   &__icon
     z-index: 0
@@ -215,27 +268,53 @@
     left: 0
     width: 100%
     height: 100%
-    padding: 35px 47px
     box-shadow: none
     background-color: transparent
     border: 2px solid $c-veryLightGrey
-    font-size: 20px
     font-weight: 300
     font-family: "Muller", sans-serif
     +transition(color, border-color)
+    +rmin(320)
+      padding: 20px
+      font-size: 14px
+    +rmin(992)
+      padding: 35px 47px
+      font-size: 17px
+    +rmin(1440)
+      font-size: 20px
 
     &::-webkit-input-placeholder
       color: $c-black
-      font-size: 20px
+      +rmin(320)
+        font-size: 14px
+      +rmin(992)
+        font-size: 17px
+      +rmin(1440)
+        font-size: 20px
     &::-moz-placeholder
       color: $c-black
-      font-size: 20px
+      +rmin(320)
+        font-size: 14px
+      +rmin(992)
+        font-size: 17px
+      +rmin(1440)
+        font-size: 20px
     &:-ms-input-placeholder
       color: $c-black
-      font-size: 20px
+      +rmin(320)
+        font-size: 14px
+      +rmin(992)
+        font-size: 17px
+      +rmin(1440)
+        font-size: 20px
     &:-moz-placeholder
       color: $c-black
-      font-size: 20px
+      +rmin(320)
+        font-size: 14px
+      +rmin(992)
+        font-size: 17px
+      +rmin(1440)
+        font-size: 20px
 
   &__btn
     cursor: pointer
