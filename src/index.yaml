@@ -10,4 +10,4 @@ PageList:
 - file: contact.html
   ready: 45
 - file: mail.html
-  ready: 45
+  ready: 55

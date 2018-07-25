@@ -71,12 +71,20 @@
   &__email
     position: relative
     color: $c-suvaGray
+    +transition(color)
     +r(767)
       font-size: 14px
     +rmin(768)
       font-size: 12px
     +rmin(1440)
       font-size: 18px
+
+    &:hover
+      color: $c-navyBlue
+      +transition(color)
+      &:after
+        background-color: $c-navyBlue
+        +transition(background-color)
 
     &:after
       content: ""
@@ -86,6 +94,7 @@
       width: 100%
       height: 2px
       background-color: $c-gainsboro
+      +transition(background-color)
 
   &__address
     color: $c-suvaGray
