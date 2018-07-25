@@ -6,7 +6,7 @@ PageList:
 - file: about.html
   ready: 55
 - file: catalog.html
-  ready: 55
+  ready: 70
 - file: contact.html
   ready: 70
 - file: mail.html

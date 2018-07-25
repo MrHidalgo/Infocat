@@ -2,31 +2,45 @@
 
 .legal
   padding-bottom: 126px
+  +r(767)
+    padding-bottom: 63px
 
 
   &__title
     padding-bottom: 49px
+    +r(767)
+      padding-bottom: 30px
 
 
   &__row
     display: flex
-    flex-wrap: wrap
-
-  &__col
-    display: flex
     align-items: center
-    width: 100%
-    margin-bottom: 37px
-    font-size: 18px
-
-    &:last-child
-      margin-bottom: 0
+    +r(767)
+      flex-wrap: wrap
 
     &-left
       width: 330px
+      +r(767)
+        width: 100%
 
     &-right
       width: calc(100% - 323px)
+      +r(767)
+        width: 100%
+
+
+  &__col
+    margin-bottom: 37px
+    font-size: 18px
+    +r(767)
+      margin-bottom: 30px
+      font-size: 14px
+
+    &:last-child
+      margin-bottom: 0
+      +r(767)
+        margin-bottom: 30px
+
 
     &-title
       padding-bottom: 7px

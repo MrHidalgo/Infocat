@@ -5,10 +5,15 @@
   min-height: 679px
   padding-top: 102px
   padding-bottom: 65px
+  +r(767)
+    padding-top: 50px
+    padding-bottom: 30px
 
 
   &__subtitle
     padding-bottom: 47px
+    +r(767)
+      padding-bottom: 30px
 
 
   &__title
@@ -19,18 +24,38 @@
     z-index: 1
     position: relative
     display: flex
+    flex-wrap: wrap
     font-size: 18px
     font-weight: 300
+    +r(1199)
+      font-size: 14px
 
     > div
       width: 100%
-      max-width: 439px
+      +r(1199)
+        padding-right: 65%
+        padding-bottom: 30px
+      +r(991)
+        padding-right: 30px
+      +r(767)
+        padding-right: 0
+      +rmin(768)
+        max-width: 100%
+      +rmin(1200)
+        padding-right: 60%
+        padding-bottom: 70px
+      +rmin(1920)
+        max-width: 439px
+        padding-right: 0
+        padding-bottom: 0
 
       p
         line-height: 1.7
 
     &-left
       margin-right: 111px
+      +r(1199)
+        margin-right: 0
 
 
   &__img
@@ -38,12 +63,36 @@
     max-width: 100%
     height: auto
 
+    &--large
+      +r(1199)
+        display: none
+    &--small
+      display: none
+      +r(1199)
+        display: block
+      +r(991)
+        margin-left: auto
+        margin-right: auto
+
+
     &-wrap
       position: absolute
       top: 194px
       right: 100px
       width: auto
       height: auto
+      +r(1199)
+        right: 30px
+      +r(991)
+        position: relative
+        top: 0
+        right: auto
+        padding-right: 30px
+        margin-top: 30px
+      +r(767)
+        padding-right: 0
+        margin-top: 0
+        margin-bottom: 30px
 
     &-btn
       z-index: 1
@@ -54,6 +103,11 @@
       left: 50%
       transform: translate(-16%, -50%)
       width: auto
+      +r(1199)
+        width: 270px
+        transform: translate(-50%, -50%)
+      +r(767)
+        justify-content: center
 
       a
         cursor: pointer
@@ -67,6 +121,10 @@
         border: 1px solid $c-white
         background-color: transparent
         +transition(background-color)
+        +r(767)
+          width: 80px
+          height: 80px
+          margin-right: 20px
 
         &:hover
           background-color: rgba($c-white, 0.15)
