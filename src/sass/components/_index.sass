@@ -97,8 +97,21 @@
     height: 55px
     border-radius: 100%
     border: 1px solid $c-navyBlue
+    background-color: transparent
+    +transition(background-color)
+
+    &:hover
+      background-color: $c-navyBlue
+      +transition(background-color)
+
+      i
+        @include sprite(arrow-right-w)
+        animation-fill-mode: both
+        animation-duration: 0.5s
+        animation-name: fadeIn
 
     &.swiper-button-disabled
+      cursor: not-allowed
       opacity: 0.5
 
     &-wrap

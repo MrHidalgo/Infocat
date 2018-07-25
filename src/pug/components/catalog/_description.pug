@@ -120,7 +120,7 @@ mixin descBlock(classMod, iconName, title, badgeCount, descArr)
       p!= "Мы являемся сертифицированными специалистами по интеграции данных решений"
       +btn("description__row-btn", "Посмотреть сертификаты", "Скрыть сертификаты", classMod)
 
-      div(description__cert-js)
+      div.animated(description__cert-js)
         .custom__button-wrap
           a.custom__button.custom__button-prev.descCert__button-prev(
             href="#" title="" class=""

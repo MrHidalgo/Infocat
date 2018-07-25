@@ -107,7 +107,11 @@ $(document).ready(function(){
   // PROJECT BLOCK BTN
   function projectBlockBtn() {
     $(".project__block-btn").on("click", function(e) {
-      $(e.currentTarget).toggleClass("is-active");
+      var elem = $(e.currentTarget),
+        imgContainer = elem.siblings(".project__block-img");
+
+      elem.toggleClass("is-active");
+      imgContainer.toggleClass("is-open");
     });
   }
 
