@@ -21,9 +21,7 @@
   ];
   var descArr2 = [
     "Графика и дизайн",
-    "",
     "Офисные программы",
-    "",
     "Программы для обработки аудио и видео"
   ];
 
@@ -35,7 +33,8 @@ mixin descBlock(classMod, iconName, title, badgeCount, descArr)
     .description__row-header
       .description__row-title
         p
-          i(class!= "icon-" + iconName)
+          span
+            i(class!= "icon-" + iconName)
           span.title!= title
       .description__row-badge
         p!= "Услуга <span>" + badgeCount + "</span>/3"

@@ -2,14 +2,20 @@
 
 .description
   padding-top: 99px
-  padding-bottom: 78px
+  +r(767)
+    padding-top: 50px
+
 
   &__subtitle
     padding-bottom: 80px
+    +r(767)
+      padding-bottom: 40px
 
 
   &__row
     padding-bottom: 122px
+    +r(767)
+      padding-bottom: 63px
 
 
     &-header
@@ -17,22 +23,42 @@
       align-items: center
       justify-content: space-between
       padding-bottom: 10px
-      padding-right: 100px
+      +rmin(768)
+        padding-right: 40px
+      +rmin(992)
+        padding-right: 70px
+      +rmin(1200)
+        padding-right: 100px
 
 
     &-title
       p
         display: flex
         align-items: center
+        +r(767)
+          flex-direction: column
+          align-items: flex-start
 
-        i
-          margin-right: 41px
+        > span:nth-child(1)
+          display: flex
+          align-items: center
+          +r(767)
+            margin-bottom: 10px
+
+          +rmin(320)
+            width: 79px
+          +rmin(768)
+            width: 89px
+          +rmin(992)
+            width: 99px
 
 
     &-badge
       opacity: 0.7
       color: $c-dimGray
       font-size: 20px
+      +r(767)
+        display: none
 
       span
         padding-left: 5px
@@ -42,29 +68,65 @@
     &-body
       display: flex
       flex-wrap: wrap
-      padding-right: 100px
+      +rmin(768)
+        padding-right: 40px
+      +rmin(992)
+        padding-right: 70px
+      +rmin(1200)
+        padding-right: 100px
 
       p
         width: 100%
-        max-width: 555px
-        padding-top: 54px
-        font-size: 20px
+        padding-right: 15px
         font-weight: 300
+        +rmin(320)
+          padding-top: 30px
+          font-size: 16px
+        +rmin(768)
+          padding-top: 54px
+          max-width: 50%
+          font-size: 20px
+        +rmin(1366)
+          max-width: 555px
 
 
     &-logo
-      padding-right: 100px
+      +rmin(768)
+        padding-right: 40px
+      +rmin(992)
+        padding-right: 70px
+      +rmin(1200)
+        padding-right: 100px
 
       .custom__button-wrap
         justify-content: flex-end
         margin-right: 0
         margin-top: 25px
         margin-bottom: 26px
-
-      .swiper
-        &-pagination
+        +r(1199)
           display: none
 
+      .swiper
+        &-container
+          +r(1199)
+            padding-top: 110px
+          +r(767)
+            padding-top: 30px
+        &-pagination
+          +r(767)
+            transform: translate(0)
+          +rmin(768)
+            justify-content: flex-end
+            bottom: auto
+            top: 37px
+            left: auto
+            right: 0
+            height: 36px
+            transform: translate(0)
+          &-bullet
+            margin: 0 9px !important
+          +rmin(1200)
+            display: none
         &-slide
           cursor: pointer
           display: flex
@@ -95,6 +157,8 @@
         padding-bottom: 31px
         color: $c-dimGray
         font-size: 20px
+        +r(767)
+          font-size: 16px
 
       .btn
         margin-bottom: 37px
@@ -112,20 +176,34 @@
         .custom__button-wrap
           justify-content: flex-end
           margin-bottom: 26px
+          +r(767)
+            display: none
+          +rmin(768)
+            margin-right: 40px
+          +rmin(992)
+            margin-right: 70px
+          +rmin(1200)
+            margin-right: 100px
+
 
         .swiper
+          &-container
+            +r(767)
+              padding-bottom: 0
           &-pagination
             display: none
-
           &-slide
             overflow: hidden
             cursor: pointer
             position: relative
             width: 346px
-            height: 347px
             border-radius: 10px
             background-color: $c-white
             box-shadow: 0 0 16.2px 1.8px rgba(26, 28, 29, 0.09)
+            +rmin(320)
+              height: 300px
+            +rmin(768)
+              height: 347px
 
             &:hover
               img

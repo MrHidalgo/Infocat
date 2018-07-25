@@ -23,70 +23,30 @@ $(document).ready(function(){
   // READY - triggered when PJAX DONE
   ////////////
   function pageReady(){
-    legacySupport();
-    // updateHeaderActiveClass();
-    // initHeaderScroll();
-
-    initPopups();
     initSliders();
     initScrollMonitor();
     initMasks();
-    initLazyLoad();
+    // initLazyLoad();
 
     hamburgerMenu();
     projectBlockBtn();
     initLightbox();
-
-    // development helper
-    _window.on('resize', debounce(setBreakpoint, 200))
-
-    // AVAILABLE in _components folder
-    // copy paste in main.js and initialize here
-
-    // initTeleport();
-    // parseSvg();
-    // revealFooter();
-    // _window.on('resize', throttle(revealFooter, 100));
   }
 
   // this is a master function which should have all functionality
   pageReady();
 
 
-  // some plugins work best with onload triggers
-  _window.on('load', function(){
-    // your functions
-  })
-
-
   //////////
   // COMMON
   //////////
-
-  function legacySupport(){
-    // svg support for laggy browsers
-    svg4everybody();
-
-    // Viewport units buggyfill
-    window.viewportUnitsBuggyfill.init({
-      force: true,
-      refreshDebounceWait: 150,
-      appendToBody: true
-    });
-  }
 
 
   // Prevent # behavior
 	_document
     .on('click', '[href="#"]', function(e) {
   		e.preventDefault();
-  	})
-    .on('click', 'a[href^="#section"]', function() { // section scroll
-      var el = $(this).attr('href');
-      $('body, html').animate({
-          scrollTop: $(el).offset().top}, 1000);
-      return false;
-    })
+  	});
 
 
   // HAMBURGER TOGGLER
@@ -131,36 +91,6 @@ $(document).ready(function(){
   //////////
 
   function initSliders(){
-    var slickNextArrow = '<div class="slick-prev"><svg class="ico ico-back-arrow"><use xlink:href="img/sprite.svg#ico-back-arrow"></use></svg></div>';
-    var slickPrevArrow = '<div class="slick-next"><svg class="ico ico-next-arrow"><use xlink:href="img/sprite.svg#ico-next-arrow"></use></svg></div>'
-
-    // General purpose sliders
-    $('[js-slider]').each(function(i, slider){
-      var self = $(slider);
-
-      // set data attributes on slick instance to control
-      if (self && self !== undefined) {
-        self.slick({
-          autoplay: self.data('slick-autoplay') !== undefined ? true : false,
-          dots: self.data('slick-dots') !== undefined ? true : false,
-          arrows: self.data('slick-arrows') !== undefined ? true : false,
-          prevArrow: slickNextArrow,
-          nextArrow: slickPrevArrow,
-          infinite: self.data('slick-infinite') !== undefined ? true : true,
-          speed: 300,
-          slidesToShow: 1,
-          accessibility: false,
-          adaptiveHeight: true,
-          draggable: self.data('slick-no-controls') !== undefined ? false : true,
-          swipe: self.data('slick-no-controls') !== undefined ? false : true,
-          swipeToSlide: self.data('slick-no-controls') !== undefined ? false : true,
-          touchMove: self.data('slick-no-controls') !== undefined ? false : true
-        });
-      }
-
-    });
-
-
     function swiperOption() {
       return {
         wrapperClass: "swiper-wrapper",
@@ -184,35 +114,60 @@ $(document).ready(function(){
         }
       }
     }
-    function swiperOptionSlide(loopOpt, slidesPerViewOpt, nextBtnName, prevBtnName) {
+    function swiperOptionSlide(slidesPerViewOpt, nextBtnName, prevBtnName) {
       return {
         wrapperClass: "swiper-wrapper",
         slideClass: "swiper-slide",
         direction: 'horizontal',
-        loop: loopOpt,
+        loop: false,
         watchOverflow: true,
         normalizeSlideIndex: true,
         grabCursor: false,
         freeMode: true,
         speed: 300,
         effect: 'slide',
-        slidesPerView: slidesPerViewOpt,
+        slidesPerView: parseInt(slidesPerViewOpt),
         spaceBetween: 30,
-        pagination: {
-          el: '.swiper-pagination',
-          clickable: true,
+        breakpoints: {
+          576: {
+            slidesPerView: 1,
+            spaceBetween: 20
+          },
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 20
+          },
+          1200: {
+            slidesPerView: 3,
+            spaceBetween: 30
+          },
+          1440: {
+            slidesPerView: 4,
+            spaceBetween: 30
+          }
         },
         navigation: {
           nextEl: nextBtnName,
           prevEl: prevBtnName,
         },
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        }
       }
     }
     var freeSwiper = new Swiper('.swiper-container.free-slide-js', swiperOption());
     var aroundSwiper = new Swiper('.swiper-container.around-slide-js', swiperOption());
-    var projectSwiper = new Swiper('.swiper-container.project-slide-js', swiperOptionSlide(false, "auto", ".project__button-next", ".project__button-prev"));
-    var descLogoSwiper = new Swiper('.swiper-container.desc-slideLogo-js', swiperOptionSlide(false, "5", ".descLogo__button-next", ".descLogo__button-prev"));
-    var descCertSwiper = new Swiper('.swiper-container.desc-slideCert-js', swiperOptionSlide(false, "4", ".descCert__button-next", ".descCert__button-prev"));
+
+    var projectSwiper = new Swiper('.project-slide-js', swiperOptionSlide("auto", ".project__button-next", ".project__button-prev"));
+
+    var descLogoSwiper0 = new Swiper('.description__row-0 .desc-slideLogo-js', swiperOptionSlide("5", ".description__row-0 .descLogo__button-next", ".description__row-0 .descLogo__button-prev"));
+    var descLogoSwiper1 = new Swiper('.description__row-1 .desc-slideLogo-js', swiperOptionSlide("5", ".description__row-1 .descLogo__button-next", ".description__row-1 .descLogo__button-prev"));
+    var descLogoSwiper2 = new Swiper('.description__row-2 .desc-slideLogo-js', swiperOptionSlide("5", ".description__row-2 .descLogo__button-next", ".description__row-2 .descLogo__button-prev"));
+
+    var descCertSwiper0 = new Swiper('.description__row-0 .desc-slideCert-js', swiperOptionSlide("4", ".description__row-0 .descCert__button-next", ".description__row-0 .descCert__button-prev"));
+    var descCertSwiper1 = new Swiper('.description__row-1 .desc-slideCert-js', swiperOptionSlide("4", ".description__row-1 .descCert__button-next", ".description__row-1 .descCert__button-prev"));
+    var descCertSwiper2 = new Swiper('.description__row-2 .desc-slideCert-js', swiperOptionSlide("4", ".description__row-2 .descCert__button-next", ".description__row-2 .descCert__button-prev"));
 
     function changeCount(classNameSlide, swiperName, mainCountName, mainLenName) {
       if ($(classNameSlide).length > 0) {
@@ -255,85 +210,20 @@ $(document).ready(function(){
           certContainer.addClass("is-show");
         }
 
-        var btnPrevName = ".description__row-" + elemIdx + " .descCert__button-prev",
+        var swiperVar = "descCertSwiper".concat(elemIdx),
+          swiperContainer = '.description__row-' + elemIdx + ' .desc-slideCert-js',
+          btnPrevName = ".description__row-" + elemIdx + " .descCert__button-prev",
           btnNextName = ".description__row-" + elemIdx + " .descCert__button-next";
 
-        descCertSwiper = new Swiper(
-          '.swiper-container.desc-slideCert-js',
-          swiperOptionSlide(false, "4", btnNextName, btnPrevName)
+        swiperVar = new Swiper(
+          swiperContainer,
+          swiperOptionSlide("4", btnNextName, btnPrevName)
         );
       });
     }
     descCertBtn();
   }
 
-  //////////
-  // MODALS
-  //////////
-
-  function initPopups(){
-    // Magnific Popup
-    var startWindowScroll = 0;
-    $('[js-popup]').magnificPopup({
-      type: 'inline',
-      fixedContentPos: true,
-      fixedBgPos: true,
-      overflowY: 'auto',
-      closeBtnInside: true,
-      preloader: false,
-      midClick: true,
-      removalDelay: 300,
-      mainClass: 'popup-buble',
-      callbacks: {
-        beforeOpen: function() {
-          startWindowScroll = _window.scrollTop();
-          // $('html').addClass('mfp-helper');
-        },
-        close: function() {
-          // $('html').removeClass('mfp-helper');
-          _window.scrollTop(startWindowScroll);
-        }
-      }
-    });
-
-    $('[js-popup-gallery]').magnificPopup({
-  		delegate: 'a',
-  		type: 'image',
-  		tLoading: 'Загрузка #%curr%...',
-  		mainClass: 'popup-buble',
-  		gallery: {
-  			enabled: true,
-  			navigateByImgClick: true,
-  			preload: [0,1]
-  		},
-  		image: {
-  			tError: '<a href="%url%">The image #%curr%</a> could not be loaded.'
-  		}
-  	});
-  }
-
-  function closeMfp(){
-    $.magnificPopup.close();
-  }
-
-  ////////////
-  // UI
-  ////////////
-
-  // textarea autoExpand
-  _document
-    .one('focus.autoExpand', '.ui-group textarea', function(){
-        var savedValue = this.value;
-        this.value = '';
-        this.baseScrollHeight = this.scrollHeight;
-        this.value = savedValue;
-    })
-    .on('input.autoExpand', '.ui-group textarea', function(){
-        var minRows = this.getAttribute('data-min-rows')|0, rows;
-        this.rows = minRows;
-        rows = Math.ceil((this.scrollHeight - this.baseScrollHeight) / 17);
-        this.rows = minRows + rows;
-    });
 
   // Masked input
   function initMasks(){
@@ -381,29 +271,6 @@ $(document).ready(function(){
       }, 100));
     });
 
-  }
-
-
-  //////////
-  // LAZY LOAD
-  //////////
-  function initLazyLoad(){
-    _document.find('[js-lazy]').Lazy({
-      threshold: 500,
-      enableThrottle: true,
-      throttle: 100,
-      scrollDirection: 'vertical',
-      effect: 'fadeIn',
-      effectTime: 350,
-      // visibleOnly: true,
-      // placeholder: "data:image/gif;base64,R0lGODlhEALAPQAPzl5uLr9Nrl8e7...",
-      onError: function(element) {
-          console.log('error loading ' + element.data('src'));
-      },
-      beforeLoad: function(element){
-        // element.attr('style', '')
-      }
-    });
   }
 
   //////////
@@ -459,7 +326,7 @@ $(document).ready(function(){
         easing: easingSwing, // swing
         duration: 300,
         complete: function(anim) {
-          triggerBody()
+          triggerBody();
           _this.done();
         }
       });
@@ -486,27 +353,4 @@ $(document).ready(function(){
     $(window).scroll();
     $(window).resize();
   }
-
-  //////////
-  // DEVELOPMENT HELPER
-  //////////
-  function setBreakpoint(){
-    var wHost = window.location.host.toLowerCase()
-    var displayCondition = wHost.indexOf("localhost") >= 0 || wHost.indexOf("surge") >= 0
-    if (displayCondition){
-      console.log(displayCondition)
-      var wWidth = _window.width();
-
-      var content = "<div class='dev-bp-debug'>"+wWidth+"</div>";
-
-      $('.page').append(content);
-      setTimeout(function(){
-        $('.dev-bp-debug').fadeOut();
-      },1000);
-      setTimeout(function(){
-        $('.dev-bp-debug').remove();
-      },1500)
-    }
-  }
-
 });
