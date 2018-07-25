@@ -1,0 +1,51 @@
+// MAP
+
+.map
+  position: relative
+  min-height: 932px
+
+
+  &__google
+    z-index: 0
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+
+    iframe
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+
+  &__box
+    position: absolute
+    top: 56px
+    left: 99px
+    width: 100%
+    max-width: 585px
+    min-height: 500px
+    padding: 43px 48px 48px 96px
+    background-color: $c-white
+
+    &-subtitle
+      padding-bottom: 80px
+      color: $c-dimGray
+      font-size: 20px
+
+    &-title
+      padding-bottom: 54px
+
+    .with-dot
+      margin-bottom: 41px
+      &:last-child
+        margin-bottom: 0
+
+      span
+        display: block
+        font-size: 20px
+        &:nth-child(1)
+          padding-bottom: 7px
+          color: rgba($c-black, 0.5)
