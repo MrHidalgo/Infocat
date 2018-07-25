@@ -224,13 +224,18 @@
     color: $c-white
     font-weight: bold
     font-family: "BrutalType", sans-serif
-    +transition(background-color, box-shadow)
+    +transition(background-color, color)
 
     &:hover
-      background-color: rgba($c-navyBlue, 0.9)
-      box-shadow: 0 0 10px 1px rgba($c-black, 0.1)
-      +transition(background-color, box-shadow)
+      color: $c-navyBlue
+      background-color: $c-white
+      +transition(background-color, color)
 
+      i
+        @include sprite(arrow-right)
+        animation-fill-mode: both
+        animation-duration: 0.5s
+        animation-name: fadeIn
 
     span
       margin-right: 27px
