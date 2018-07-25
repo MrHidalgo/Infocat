@@ -80,9 +80,13 @@
     +rmin(1440)
       font-size: 18px
 
-    &:hover
+    &:hover,
+    &:focus
       color: $c-navyBlue
       +transition(color)
+
+    &.is-active
+      color: $c-navyBlue
 
     i
       +rmin(768)
