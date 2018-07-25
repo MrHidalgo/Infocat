@@ -13,19 +13,23 @@ section.post
 
     form.post__form.form(action="" method="" autocomplete="off")
       .form__field.form__field--input
-        input.form__input(type="text" name="" placeholder="Как к Вам обращаться ?")
+        input.form__input(type="text" name="name" placeholder="Как к Вам обращаться ?")
+        i.form__icon.icon-done
 
       .form__field.form__field--input
-        input.form__input(type="tel" name="" placeholder="")
+        input.form__input(type="tel" name="phone" placeholder="")
+        i.form__icon.icon-done
 
       .form__field.form__field--input
-        input.form__input(type="text" name="" placeholder="На какую почту писать ?")
+        input.form__input(type="text" name="email" placeholder="На какую почту писать ?")
+        i.form__icon.icon-done
 
       .form__field.form__field--input
-        input.form__input(type="text" name="" placeholder="Тема собщения")
+        input.form__input(type="text" name="subject" placeholder="Тема собщения")
+        i.form__icon.icon-done
 
       .form__field.form__field--textarea
-        textarea.form__textarea(name="" placeholder="Что Вы хотите нам сказать ?")
+        textarea.form__textarea(name="message" placeholder="Что Вы хотите нам сказать ?")
 
       .form__field.form__field--info
         p!= "Нажимая кнопку Отправить я подтверждаю, что ознакомлен и согласен с <a href='#'>Политикой конфиденциальности</a> и даю согласие на обработку своих персональных данных"

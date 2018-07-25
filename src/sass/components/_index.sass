@@ -107,6 +107,23 @@
     width: 100%
     margin-bottom: 40px
 
+    &.has-error
+      .form__input,
+      .form__textarea
+        color: red
+        border-color: red
+        +transition(color, border-color)
+
+    &.has-done
+      .form__input,
+      .form__textarea
+        color: $c-navyBlue
+        border-color: $c-navyBlue
+        +transition(color, border-color)
+      .form__icon
+        opacity: 1
+        +transition(opacity)
+
     &--input
       max-width: 367px
       height: 46px
@@ -121,15 +138,13 @@
         a
           color: $c-navyBlue
 
-    &--button
-
-
   &__input
     position: absolute
     top: 0
     left: 0
     width: 100%
     height: 100%
+    padding-right: 25px
     border-radius: 0
     box-shadow: none
     border: none
@@ -138,6 +153,7 @@
     font-size: 20px
     font-weight: 300
     font-family: "Muller", sans-serif
+    +transition(color, border-color)
 
     &::-webkit-input-placeholder
       color: $c-black
@@ -151,6 +167,17 @@
     &:-moz-placeholder
       color: $c-black
       font-size: 20px
+
+  &__icon
+    z-index: 0
+    opacity: 0
+    position: absolute
+    top: 50%
+    transform: translateY(-50%)
+    right: 0
+    width: 21px
+    height: 15px
+    +transition(opacity)
 
   &__textarea
     resize: none
@@ -166,6 +193,7 @@
     font-size: 20px
     font-weight: 300
     font-family: "Muller", sans-serif
+    +transition(color, border-color)
 
     &::-webkit-input-placeholder
       color: $c-black
@@ -181,6 +209,8 @@
       font-size: 20px
 
   &__btn
+    cursor: pointer
+    outline: none
     white-space: nowrap
     display: inline-flex
     align-items: center
@@ -194,6 +224,27 @@
     color: $c-white
     font-weight: bold
     font-family: "BrutalType", sans-serif
+    +transition(background-color, box-shadow)
+
+    &:hover
+      background-color: rgba($c-navyBlue, 0.9)
+      box-shadow: 0 0 10px 1px rgba($c-black, 0.1)
+      +transition(background-color, box-shadow)
+
 
     span
       margin-right: 27px
+
+
+// ERROR
+.error
+  z-index: 0
+  position: absolute
+  left: 0
+  bottom: -18px
+  color: red
+  font-size: 12px
+  font-weight: bold
+  animation-fill-mode: both
+  animation-duration: 1s
+  animation-name: fadeIn

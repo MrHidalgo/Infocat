@@ -15,10 +15,10 @@ $(document).ready(function(){
     error.appendTo(element.parent("div"));
   }
   var validateHighlight = function(element) {
-    $(element).parent('div').addClass("has-error");
+    $(element).parent('div').addClass("has-error").removeClass("has-done");
   }
   var validateUnhighlight = function(element) {
-    $(element).parent('div').removeClass("has-error");
+    $(element).parent('div').removeClass("has-error").addClass("has-done");
   }
   var validateSubmitHandler = function(form) {
     $(form).addClass('loading');
@@ -59,39 +59,33 @@ $(document).ready(function(){
   /////////////////////
   // REGISTRATION FORM
   ////////////////////
-  $(".js-registration-form").validate({
+  $(".post__form").validate({
     errorPlacement: validateErrorPlacement,
     highlight: validateHighlight,
     unhighlight: validateUnhighlight,
     submitHandler: validateSubmitHandler,
     rules: {
-      last_name: "required",
-      first_name: "required",
+      name: "required",
+      subject: "required",
+      message: "required",
       email: {
         required: true,
         email: true
       },
-      password: {
-        required: true,
-        minlength: 6,
-      }
-      // phone: validatePhone
+      phone: validatePhone
     },
     messages: {
-      last_name: "Заполните это поле",
-      first_name: "Заполните это поле",
+      name: "Заполните это поле",
+      subject: "Заполните это поле",
+      message: "Заполните это поле",
       email: {
-          required: "Заполните это поле",
-          email: "Email содержит неправильный формат"
+        required: "Заполните это поле",
+        email: "Email содержит неправильный формат"
       },
-      password: {
-          required: "Заполните это поле",
-          email: "Пароль мимимум 6 символов"
-      },
-      // phone: {
-      //     required: "Заполните это поле",
-      //     minlength: "Введите корректный телефон"
-      // }
+      phone: {
+        required: "Заполните это поле",
+        minlength: "Введите корректный телефон"
+      }
     }
   });
 

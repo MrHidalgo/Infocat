@@ -5,7 +5,7 @@ $sprite: (
 		width: 35px,
 		height: 31px,
 		total-width: 234px,
-		total-height: 119px,
+		total-height: 144px,
 		image: '../img/sprite.png'
 	),
 	arrow-right-w: (
@@ -14,7 +14,7 @@ $sprite: (
 		width: 9px,
 		height: 13px,
 		total-width: 234px,
-		total-height: 119px,
+		total-height: 144px,
 		image: '../img/sprite.png'
 	),
 	arrow-right: (
@@ -23,7 +23,7 @@ $sprite: (
 		width: 9px,
 		height: 13px,
 		total-width: 234px,
-		total-height: 119px,
+		total-height: 144px,
 		image: '../img/sprite.png'
 	),
 	catalog: (
@@ -32,7 +32,7 @@ $sprite: (
 		width: 33px,
 		height: 32px,
 		total-width: 234px,
-		total-height: 119px,
+		total-height: 144px,
 		image: '../img/sprite.png'
 	),
 	contact: (
@@ -41,7 +41,7 @@ $sprite: (
 		width: 20px,
 		height: 35px,
 		total-width: 234px,
-		total-height: 119px,
+		total-height: 144px,
 		image: '../img/sprite.png'
 	),
 	desc-0: (
@@ -50,7 +50,7 @@ $sprite: (
 		width: 58px,
 		height: 58px,
 		total-width: 234px,
-		total-height: 119px,
+		total-height: 144px,
 		image: '../img/sprite.png'
 	),
 	desc-1: (
@@ -59,7 +59,7 @@ $sprite: (
 		width: 59px,
 		height: 45px,
 		total-width: 234px,
-		total-height: 119px,
+		total-height: 144px,
 		image: '../img/sprite.png'
 	),
 	desc-2: (
@@ -68,7 +68,16 @@ $sprite: (
 		width: 48px,
 		height: 51px,
 		total-width: 234px,
-		total-height: 119px,
+		total-height: 144px,
+		image: '../img/sprite.png'
+	),
+	done: (
+		offset-x: 0px,
+		offset-y: -129px,
+		width: 21px,
+		height: 15px,
+		total-width: 234px,
+		total-height: 144px,
 		image: '../img/sprite.png'
 	),
 	order: (
@@ -77,7 +86,7 @@ $sprite: (
 		width: 37px,
 		height: 28px,
 		total-width: 234px,
-		total-height: 119px,
+		total-height: 144px,
 		image: '../img/sprite.png'
 	),
 	phone: (
@@ -86,7 +95,7 @@ $sprite: (
 		width: 26px,
 		height: 26px,
 		total-width: 234px,
-		total-height: 119px,
+		total-height: 144px,
 		image: '../img/sprite.png'
 	),
 	play: (
@@ -95,7 +104,7 @@ $sprite: (
 		width: 20px,
 		height: 26px,
 		total-width: 234px,
-		total-height: 119px,
+		total-height: 144px,
 		image: '../img/sprite.png'
 	),
 	shogo-logo: (
@@ -104,7 +113,7 @@ $sprite: (
 		width: 97px,
 		height: 23px,
 		total-width: 234px,
-		total-height: 119px,
+		total-height: 144px,
 		image: '../img/sprite.png'
 	),
 );
@@ -186,6 +195,9 @@ $sprite: (
 	}
 	.icon-desc-2 {
 		@include sprite(desc-2)
+	}
+	.icon-done {
+		@include sprite(done)
 	}
 	.icon-order {
 		@include sprite(order)
