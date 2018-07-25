@@ -8,6 +8,6 @@ PageList:
 - file: catalog.html
   ready: 55
 - file: contact.html
-  ready: 55
+  ready: 70
 - file: mail.html
   ready: 70

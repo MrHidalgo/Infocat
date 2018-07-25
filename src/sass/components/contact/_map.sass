@@ -12,6 +12,11 @@
     left: 0
     width: 100%
     height: 100%
+    +r(991)
+      position: relative
+      min-height: 450px
+    +r(767)
+      margin-bottom: 50px
 
     iframe
       position: absolute
@@ -21,19 +26,40 @@
       height: 100%
 
   &__box
+    z-index: 1
     position: absolute
     top: 56px
     left: 99px
     width: 100%
-    max-width: 585px
     min-height: 500px
-    padding: 43px 48px 48px 96px
     background-color: $c-white
+    +r(991)
+      position: static
+      padding-top: 50px
+      padding-left: 20px
+      padding-right: 20px
+      margin-bottom: 50px
+    +r(767)
+      padding-left: 0
+      padding-right: 0
+    +rmin(992)
+      top: 50px
+      left: 50px
+      width: auto
+      padding: 35px 50px
+    +rmin(1366)
+      top: 56px
+      left: 99px
+      width: 100%
+      max-width: 585px
+      padding: 43px 48px 48px 96px
 
     &-subtitle
       padding-bottom: 80px
       color: rgba($c-dimGray, 0.7)
       font-size: 20px
+      +r(767)
+        padding-bottom: 40px
 
     &-title
       padding-bottom: 54px
@@ -46,6 +72,8 @@
       span
         display: block
         font-size: 20px
+        +r(767)
+          font-size: 16px
         &:nth-child(1)
           padding-bottom: 7px
           color: rgba($c-black, 0.5)
