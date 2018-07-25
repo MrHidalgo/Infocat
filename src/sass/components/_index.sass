@@ -22,6 +22,19 @@
   color: $c-navyBlue
   font-weight: bold
   font-family: "BrutalType", sans-serif
+  +transition(background-color, color)
+
+  &:hover,
+  &:focus
+    color: $c-white
+    background-color: $c-navyBlue
+    +transition(background-color, color)
+
+    i
+      @include sprite(arrow-right-w)
+      animation-fill-mode: both
+      animation-duration: 0.5s
+      animation-name: fadeIn
 
   span
     margin-right: 27px
@@ -41,10 +54,13 @@
       background-color: transparent
 
   &.is-active
+    color: $c-navyBlue
     border-color: transparent
+    background-color: transparent
 
     i
       transform: rotate(-90deg)
+      @include sprite(arrow-right)
       &:after
         border-color: $c-navyBlue
 
@@ -226,7 +242,8 @@
     font-family: "BrutalType", sans-serif
     +transition(background-color, color)
 
-    &:hover
+    &:hover,
+    &:focus
       color: $c-navyBlue
       background-color: $c-white
       +transition(background-color, color)
