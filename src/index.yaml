@@ -11,5 +11,3 @@ PageList:
   ready: 15
 - file: mail.html
   ready: 15
-- file: quick.html
-  ready: 15
