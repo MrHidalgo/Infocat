@@ -74,10 +74,15 @@
     padding-right: 15px
     text-align: center
     font-size: 18px
+    +transition(color)
     +rmin(768)
       font-size: 13px
     +rmin(1440)
       font-size: 18px
+
+    &:hover
+      color: $c-navyBlue
+      +transition(color)
 
     i
       +rmin(768)
