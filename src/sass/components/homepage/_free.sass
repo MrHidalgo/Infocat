@@ -2,15 +2,32 @@
 
 .free
   position: relative
-  padding-bottom: 214px
+  //padding-bottom: 164px
+  +rmin(320)
+    padding-bottom: 55px
+  +rmin(768)
+    padding-bottom: 110px
+  +rmin(1200)
+    padding-bottom: 164px
 
 
   &__bg
+    position: absolute
+    top: 0
+    right: 0
+    +rmin(992)
+      width: 70%
+    +rmin(1200)
+      width: 75%
+    +rmin(1920)
+      width: 100%
+
     img
       z-index: 0
       position: absolute
       right: 0
       top: 0
+      max-width: 100%
 
 
   &__wrapper
@@ -23,12 +40,24 @@
 
     &-left,
     &-right
-      width: 50%
+      +rmin(1200)
+        //width: 50%
 
     &-left
       padding-top: 262px
+      +rmin(992)
+        padding-top: 162px
+        width: 380px
+      +rmin(1200)
+        padding-top: 262px
+        width: 50%
+
 
     &-right
+      +rmin(992)
+        width: calc(100% - 380px)
+      +rmin(1200)
+        width: 50%
       img
         display: block
         max-width: 100%
@@ -37,6 +66,10 @@
   &__col
     width: 100%
     margin-bottom: 72px
+    +rmin(992)
+      margin-bottom: 36px
+    +rmin(1200)
+      margin-bottom: 72px
 
     &-0
       max-width: 293px
@@ -49,6 +82,10 @@
   &__subtitle
     position: absolute
     top: 99px
+    +rmin(992)
+      top: 69px
+    +rmin(1200)
+      top: 99px
 
 
   &__count
@@ -58,7 +95,18 @@
     top: 92px
     right: 347px
     color: $c-cornflower
-    font-size: 19px
+    +rmin(320)
+      font-size: 14px
+    +rmin(768)
+      font-size: 17px
+    +rmin(992)
+      top: 62px
+      right: 20px
+
+    +rmin(1200)
+      top: 92px
+      right: 347px
+      font-size: 19px
 
     span
       display: inline-block
@@ -67,6 +115,12 @@
         width: 25px
         text-align: right
         font-size: 27px
+        +rmin(320)
+          font-size: 17px
+        +rmin(992)
+          font-size: 22px
+        +rmin(1200)
+          font-size: 27px
 
 
   &__title
@@ -78,7 +132,19 @@
     line-height: 1.2
     color: rgba($c-black, 0.9)
     font-size: 20px
+    +rmin(320)
+      font-size: 14px
+    +rmin(768)
+      font-size: 17px
+    +rmin(1200)
+      font-size: 20px
 
 
   &__btn
     margin-bottom: 79px
+
+
+  .swiper
+    &-container
+      padding: 0
+      padding-bottom: 36px

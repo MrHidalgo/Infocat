@@ -9,16 +9,27 @@
     padding-bottom: 29px
 
     &-left
-      width: 614px
+      width: 323px
+      +rmin(992)
+        width: 263px
+      +rmin(1366)
+        width: 323px
 
     &-right
       width: 100%
-      max-width: calc(100% - 614px)
-      padding-left: 15px
+      max-width: calc(100% - 323px)
+      padding-right: 100px
+      +rmin(992)
+        max-width: calc(100% - 263px)
+        padding-right: 30px
+      +rmin(1366)
+        max-width: calc(100% - 323px)
+        padding-right: 100px
 
 
   &__title
-    padding-bottom: 138px
+    position: relative
+    top: 50px
 
 
   &__subtitle
@@ -31,15 +42,25 @@
     display: block
     max-width: 100%
     height: auto
+    margin-left: auto
 
 
   &__count
+    padding-top: 138px
     padding-bottom: 40px
     line-height: 1
     color: $c-navyBlue
     font-size: 72px
     font-weight: 300
+    +rmin(992)
+      font-size: 43px
+    +rmin(1366)
+      font-size: 72px
 
     span
       &:nth-child(1)
         font-size: 252px
+        +rmin(992)
+          font-size: 152px
+        +rmin(1366)
+          font-size: 252px
