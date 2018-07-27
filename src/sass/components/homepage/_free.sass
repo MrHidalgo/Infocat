@@ -2,7 +2,6 @@
 
 .free
   position: relative
-  //padding-bottom: 164px
   +rmin(320)
     padding-bottom: 55px
   +rmin(768)
@@ -15,7 +14,7 @@
     position: absolute
     top: 0
     right: 0
-    +rmin(992)
+    +rmin(768)
       width: 70%
     +rmin(1200)
       width: 75%
@@ -38,13 +37,20 @@
   &__row
     display: flex
 
-    &-left,
-    &-right
-      +rmin(1200)
-        //width: 50%
+    &-1
+      +r(767)
+        display: none
+
 
     &-left
-      padding-top: 262px
+      +r(767)
+        z-index: 1
+        position: relative
+        width: 100%
+        padding-top: 43px
+      +rmin(768)
+        padding-top: 132px
+        width: 240px
       +rmin(992)
         padding-top: 162px
         width: 380px
@@ -54,10 +60,21 @@
 
 
     &-right
+      +r(767)
+        z-index: 0
+        opacity: 0.8
+        position: absolute
+        bottom: 80px
+        right: 0
+      +rmin(768)
+        width: calc(100% - 240px)
+        padding-top: 150px
       +rmin(992)
         width: calc(100% - 380px)
+        padding-top: 100px
       +rmin(1200)
         width: 50%
+        padding-top: 0
       img
         display: block
         max-width: 100%
@@ -66,7 +83,7 @@
   &__col
     width: 100%
     margin-bottom: 72px
-    +rmin(992)
+    +rmin(768)
       margin-bottom: 36px
     +rmin(1200)
       margin-bottom: 72px
@@ -80,8 +97,12 @@
 
 
   &__subtitle
-    position: absolute
-    top: 99px
+    +r(767)
+      padding-top: 30px
+    +rmin(768)
+      position: absolute
+      left: 0
+      top: 59px
     +rmin(992)
       top: 69px
     +rmin(1200)
@@ -95,14 +116,12 @@
     top: 92px
     right: 347px
     color: $c-cornflower
-    +rmin(320)
-      font-size: 14px
+    +r(767)
+      display: none
     +rmin(768)
       font-size: 17px
-    +rmin(992)
       top: 62px
       right: 20px
-
     +rmin(1200)
       top: 92px
       right: 347px
@@ -142,9 +161,15 @@
 
   &__btn
     margin-bottom: 79px
+    +r(767)
+      margin-top: 100px
+      margin-bottom: 15px
 
 
   .swiper
     &-container
       padding: 0
       padding-bottom: 36px
+    &-pagination
+      +r(767)
+        transform: translateX(0)
