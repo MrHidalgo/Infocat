@@ -17,7 +17,7 @@ mixin btn(classMod, text, textData, idx)
     class= (classMod) ? classMod : ""
   )
     span(data-txt!= textData)!= text
-    i.icon-arrow-right
+    +icon("ico-strelka")
 
 
 mixin logo(classMod)
@@ -46,5 +46,5 @@ mixin phone(classMod)
       title=""
       class="phone__btn"
     )
-      i.icon-phone
+      +icon("ico-zvonok")
       span!= "+7 (495) 134 30 21"

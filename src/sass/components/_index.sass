@@ -47,45 +47,50 @@
     padding-left: 20px
     padding-right: 20px
 
+  &:after
+    content: ""
+    position: absolute
+    top: 0
+    right: 20px
+    width: 48px
+    height: 48px
+    border-radius: 100%
+    border: 1px solid transparent
+    background-color: transparent
+    +transition(border-color)
+
   &:hover,
   &:focus
     color: $c-white
     background-color: $c-navyBlue
     +transition(background-color, color)
 
-    i
-      @include sprite(arrow-right-w)
-      animation-fill-mode: both
-      animation-duration: 0.5s
-      animation-name: fadeIn
+    svg
+      stroke: $c-white
+      +transition(stroke)
 
   span
     margin-right: 27px
 
-  i
+  svg
     position: relative
-
-    &:after
-      content: ""
-      position: absolute
-      top: -19px
-      left: -21px
-      width: 48px
-      height: 48px
-      border-radius: 100%
-      border: 1px solid transparent
-      background-color: transparent
+    width: 9px
+    height: 13px
+    stroke: $c-navyBlue
+    +transition(stroke)
 
   &.is-active
     color: $c-navyBlue
     border-color: transparent
     background-color: transparent
 
-    i
+    &:after
+      border-color: $c-navyBlue
+
+    svg
+      stroke: $c-navyBlue
       transform: rotate(-90deg)
-      @include sprite(arrow-right)
-      &:after
-        border-color: $c-navyBlue
+      +transition(stroke)
 
 
 
@@ -130,15 +135,19 @@
     +r(1199)
       display: none
 
+    svg
+      width: 9px
+      height: 13px
+      stroke: $c-navyBlue
+      +transition(stroke)
+
     &:hover
       background-color: $c-navyBlue
       +transition(background-color)
 
-      i
-        @include sprite(arrow-right-w)
-        animation-fill-mode: both
-        animation-duration: 0.5s
-        animation-name: fadeIn
+      svg
+        stroke: $c-white
+        +transition(stroke)
 
     &.swiper-button-disabled
       cursor: not-allowed
@@ -150,7 +159,7 @@
 
     &-prev
       margin-right: 12px
-      i
+      svg
         transform: rotate(-180deg)
     &-next
       margin-left: 12px

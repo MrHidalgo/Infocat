@@ -1,56 +1,11 @@
 $sprite: (
-	about: (
-		offset-x: -137px,
-		offset-y: -33px,
-		width: 35px,
-		height: 31px,
-		total-width: 234px,
-		total-height: 144px,
-		image: '../img/sprite.png'
-	),
-	arrow-right-w: (
-		offset-x: -216px,
-		offset-y: -74px,
-		width: 9px,
-		height: 13px,
-		total-width: 234px,
-		total-height: 144px,
-		image: '../img/sprite.png'
-	),
-	arrow-right: (
-		offset-x: -118px,
-		offset-y: -68px,
-		width: 9px,
-		height: 13px,
-		total-width: 234px,
-		total-height: 144px,
-		image: '../img/sprite.png'
-	),
-	catalog: (
-		offset-x: -137px,
-		offset-y: -74px,
-		width: 33px,
-		height: 32px,
-		total-width: 234px,
-		total-height: 144px,
-		image: '../img/sprite.png'
-	),
-	contact: (
-		offset-x: -58px,
-		offset-y: -68px,
-		width: 20px,
-		height: 35px,
-		total-width: 234px,
-		total-height: 144px,
-		image: '../img/sprite.png'
-	),
 	desc-0: (
 		offset-x: 0px,
 		offset-y: 0px,
 		width: 58px,
 		height: 58px,
 		total-width: 234px,
-		total-height: 144px,
+		total-height: 119px,
 		image: '../img/sprite.png'
 	),
 	desc-1: (
@@ -59,7 +14,7 @@ $sprite: (
 		width: 59px,
 		height: 45px,
 		total-width: 234px,
-		total-height: 144px,
+		total-height: 119px,
 		image: '../img/sprite.png'
 	),
 	desc-2: (
@@ -68,43 +23,25 @@ $sprite: (
 		width: 48px,
 		height: 51px,
 		total-width: 234px,
-		total-height: 144px,
+		total-height: 119px,
 		image: '../img/sprite.png'
 	),
 	done: (
-		offset-x: 0px,
-		offset-y: -129px,
+		offset-x: -167px,
+		offset-y: -33px,
 		width: 21px,
 		height: 15px,
 		total-width: 234px,
-		total-height: 144px,
-		image: '../img/sprite.png'
-	),
-	order: (
-		offset-x: -182px,
-		offset-y: -33px,
-		width: 37px,
-		height: 28px,
-		total-width: 234px,
-		total-height: 144px,
-		image: '../img/sprite.png'
-	),
-	phone: (
-		offset-x: -180px,
-		offset-y: -74px,
-		width: 26px,
-		height: 26px,
-		total-width: 234px,
-		total-height: 144px,
+		total-height: 119px,
 		image: '../img/sprite.png'
 	),
 	play: (
-		offset-x: -88px,
-		offset-y: -68px,
+		offset-x: -137px,
+		offset-y: -33px,
 		width: 20px,
 		height: 26px,
 		total-width: 234px,
-		total-height: 144px,
+		total-height: 119px,
 		image: '../img/sprite.png'
 	),
 	shogo-logo: (
@@ -113,7 +50,7 @@ $sprite: (
 		width: 97px,
 		height: 23px,
 		total-width: 234px,
-		total-height: 144px,
+		total-height: 119px,
 		image: '../img/sprite.png'
 	),
 );
@@ -172,21 +109,6 @@ $sprite: (
 
 
 
-	.icon-about {
-		@include sprite(about)
-	}
-	.icon-arrow-right-w {
-		@include sprite(arrow-right-w)
-	}
-	.icon-arrow-right {
-		@include sprite(arrow-right)
-	}
-	.icon-catalog {
-		@include sprite(catalog)
-	}
-	.icon-contact {
-		@include sprite(contact)
-	}
 	.icon-desc-0 {
 		@include sprite(desc-0)
 	}
@@ -198,12 +120,6 @@ $sprite: (
 	}
 	.icon-done {
 		@include sprite(done)
-	}
-	.icon-order {
-		@include sprite(order)
-	}
-	.icon-phone {
-		@include sprite(phone)
 	}
 	.icon-play {
 		@include sprite(play)

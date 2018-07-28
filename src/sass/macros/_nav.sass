@@ -20,7 +20,7 @@
         margin-bottom: 45px
 
       a
-        i
+        svg
           margin-bottom: 16px
           +rmin(768)
             margin-bottom: 9px
@@ -34,7 +34,7 @@
         margin-bottom: 25px
 
       a
-        i
+        svg
           margin-bottom: 12px
           +rmin(768)
             margin-bottom: 7px
@@ -48,7 +48,7 @@
         margin-bottom: 45px
 
       a
-        i
+        svg
           margin-bottom: 12px
           +rmin(768)
             margin-bottom: 5px
@@ -58,7 +58,7 @@
       margin-bottom: 45px
 
       a
-        i
+        svg
           margin-bottom: 12px
           +rmin(768)
             margin-bottom: 4px
@@ -88,7 +88,10 @@
     &.is-active
       color: $c-navyBlue
 
-    i
+    svg
+      width: 26px
+      height: 26px
+      stroke: $c-navyBlue
       +rmin(768)
         transform: scale(0.75)
       +rmin(1440)
