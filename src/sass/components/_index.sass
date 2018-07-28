@@ -355,15 +355,23 @@
 
     &:hover,
     &:focus
-      color: $c-navyBlue
-      background-color: $c-white
+      color: $c-white
+      background-color: $c-navyBlue
       +transition(background-color, color)
 
-      i
-        @include sprite(arrow-right)
-        animation-fill-mode: both
-        animation-duration: 0.5s
-        animation-name: fadeIn
+      svg
+        stroke: $c-white
+        +transition(stroke)
+
+    span
+      margin-right: 27px
+
+    svg
+      position: relative
+      width: 9px
+      height: 13px
+      stroke: $c-navyBlue
+      +transition(stroke)
 
     span
       margin-right: 27px
