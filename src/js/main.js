@@ -97,10 +97,10 @@ $(document).ready(function(){
         slideClass: "swiper-slide",
         direction: 'horizontal',
         loop: true,
-        watchOverflow: true,
+        watchOverflow: false,
         normalizeSlideIndex: true,
         grabCursor: false,
-        freeMode: true,
+        freeMode: false,
         speed: 300,
         effect: 'fade',
         fadeEffect: {
