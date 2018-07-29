@@ -32,6 +32,7 @@ $(document).ready(function () {
     projectBlockBtn();
     initLightbox();
     initPreferScroll();
+    initQuickForm();
   }
 
   // this is a master function which should have all functionality
@@ -91,7 +92,7 @@ $(document).ready(function () {
   }
 
 
-  // LIGHTBOX
+  // Init prefer scrollbar
   function initPreferScroll() {
     var ps = "";
 
@@ -101,6 +102,17 @@ $(document).ready(function () {
       ps.destroy();
       ps = null;
     }
+  }
+
+
+  // Init quick form
+  function initQuickForm() {
+    $("[quick-btn-js]").on("click", function(e) {
+      $("[quick-form-js]").addClass("is-active");
+    });
+    $(".quick__form-close").on("click", function(e) {
+      $("[quick-form-js]").removeClass("is-active");
+    });
   }
 
 

@@ -1,0 +1,127 @@
+// QUICK
+
+.quick
+  z-index: 10
+  position: fixed
+  +rmin(320)
+    bottom: 25px
+    right: 25px
+  +rmin(768)
+    bottom: 50px
+    right: 50px
+  +rmin(1200)
+    bottom: 75px
+    right: 75px
+  +rmin(1440)
+    bottom: 100px
+    right: 100px
+
+
+  &__btn
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    width: 130px
+    height: 130px
+    padding: 15px
+    border-radius: 100%
+    background-color: $c-navyBlue
+    +rmin(320)
+      width: 90px
+      height: 90px
+      padding: 10px
+    +rmin(1200)
+      width: 110px
+      height: 110px
+      padding: 15px
+    +rmin(1440)
+      width: 130px
+      height: 130px
+
+    svg
+      width: 51px
+      height: 51px
+      margin-bottom: 5px
+      stroke: $c-white
+
+    span
+      display: block
+      text-align: center
+      color: $c-white
+      font-size: 14px
+      font-weight: bold
+
+
+  &__form
+    display: none
+    position: absolute
+    bottom: 0
+    right: 0
+    width: 584px
+    height: 662px
+    padding-top: 102px
+    padding-left: 76px
+    border-bottom-right-radius: 65px
+    background-color: $c-white
+    box-shadow: 0 0 20px 3px rgba($c-black, 0.15)
+
+    &.is-active
+      display: block
+      animation-fill-mode: both
+      animation-duration: 0.35s
+      animation-name: quickAnim
+
+      > *
+        animation-fill-mode: both
+        animation-delay: 0.45s
+        animation-duration: 0.5s
+        animation-name: fadeIn
+
+    &-close
+      position: absolute
+      top: 35px
+      right: 35px
+      width: 24px
+      height: 24px
+
+      &:before,
+      &:after
+        content: ""
+        position: absolute
+        top: 12px
+        left: 0
+        width: 100%
+        height: 1px
+        background-color: $c-navyBlue
+
+      &:before
+        transform: rotate(-45deg)
+      &:after
+        transform: rotate(45deg)
+
+    &-title
+      padding-bottom: 80px
+      font-size: 30px
+      font-weight: 300
+
+    .form__field--info
+      width: 100%
+      max-width: 385px
+      margin-bottom: 80px
+
+
+
+@keyframes quickAnim
+  0%
+    opacity: 1
+    border-radius: 100%
+    border-bottom-right-radius: 65px
+    width: 130px
+    height: 130px
+  100%
+    width: 584px
+    height: 662px
+
+
+

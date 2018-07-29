@@ -1,0 +1,40 @@
+// QUICK :: START
+
+.quick
+  a(
+    href="#"
+    title=""
+    class="quick__btn"
+    quick-btn-js
+  )
+    +icon("ico-ostavit-zauavku")
+    span!= "Оставить  заявку"
+
+  .quick__form(quick-form-js)
+    a(
+      href="#"
+      title=""
+      class="quick__form-close"
+    )
+
+    p.quick__form-title!= "Дружить с котами — Легко!"
+
+    form.form(action="" method="" autocomplete="off")
+      .form__field.form__field--input
+        input.form__input(type="text" name="quick_name" placeholder="Как к Вам обращаться ?")
+        i.form__icon.icon-done
+
+      .form__field.form__field--input
+        input.form__input(type="tel" name="quick_phone" placeholder="")
+        i.form__icon.icon-done
+
+      .form__field.form__field--info
+        p!= "Нажимая кнопку Отправить я подтверждаю, что ознакомлен и согласен с <a href='#'>Политикой конфиденциальности</a> и даю согласие на обработку своих персональных данных"
+
+      .form__field.form__field--button
+        button.form__btn(type="submit")
+          span!= "Отправить"
+          +icon("ico-strelka")
+
+
+// QUICK :: END
