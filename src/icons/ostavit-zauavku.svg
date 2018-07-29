@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="51px" height="53px" viewBox="0 0 51 53" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>ostavit-zauavku</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="ostavit-zauavku" transform="translate(1.000000, 1.000000)">
+            <path d="M24.33,0.5 C11.17,0.5 0.5,9.6 0.5,20.83 C0.5,27 3.72,32.53 8.81,36.26 C9.18538299,36.5295879 9.41441787,36.9581048 9.43,37.42 L9.68,48.27 L18.33,41.06 C18.6678341,40.7831899 19.1106832,40.6697327 19.54,40.75 C21.1248161,41.0287547 22.7308556,41.1692832 24.34,41.17 C37.5,41.17 48.17,32.07 48.17,20.84 C48.17,9.61 37.5,0.5 24.33,0.5 Z" id="Shape" stroke="#E8E8E8" stroke-width="3"></path>
+            <rect id="Rectangle-path" fill="#E8E8E8" fill-rule="nonzero" x="11.88" y="16.79" width="24.88" height="2.87" rx="1.435"></rect>
+            <rect id="Rectangle-path" fill="#E8E8E8" fill-rule="nonzero" x="14.52" y="22.54" width="18.77" height="2.87" rx="1.435"></rect>
+        </g>
+    </g>
+</svg>
