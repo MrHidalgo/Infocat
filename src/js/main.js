@@ -26,7 +26,7 @@ $(document).ready(function(){
     initSliders();
     initScrollMonitor();
     initMasks();
-    // initLazyLoad();
+    initPopups();
 
     hamburgerMenu();
     projectBlockBtn();
@@ -222,6 +222,38 @@ $(document).ready(function(){
       });
     }
     descCertBtn();
+  }
+
+
+  //////////
+  // MODALS
+  //////////
+
+  function initPopups() {
+    var startWindowScroll = 0;
+
+    $('[playVideo-js]').magnificPopup({
+      type: 'iframe',
+      fixedContentPos: true,
+      fixedBgPos: true,
+      overflowY: 'auto',
+      closeBtnInside: false,
+      preloader: false,
+      midClick: true,
+      removalDelay: 300,
+      mainClass: 'popup-buble',
+      patterns: {
+        youtube: {
+          index: 'youtube.com/',
+          id: 'v=', // String that splits URL in a two parts, second part should be %id%
+          src: '//www.youtube.com/embed/%id%?autoplay=1&controls=0&showinfo=0' // URL that will be set as a source for iframe.
+        }
+      }
+    });
+  }
+
+  function closeMfp() {
+    $.magnificPopup.close();
   }
 
 
