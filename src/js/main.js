@@ -133,7 +133,7 @@ $(document).ready(function () {
       }
     }
 
-    function swiperOptionSlide(slidesPerViewOpt, nextBtnName, prevBtnName) {
+    function swiperOptionSlide(beforeOffsetVal, slidesPerViewOpt, nextBtnName, prevBtnName) {
       return {
         wrapperClass: "swiper-wrapper",
         slideClass: "swiper-slide",
@@ -145,6 +145,7 @@ $(document).ready(function () {
         freeMode: true,
         speed: 300,
         effect: 'slide',
+        slidesOffsetBefore: beforeOffsetVal,
         slidesPerView: slidesPerViewOpt,
         spaceBetween: 30,
         breakpoints: {
@@ -179,15 +180,15 @@ $(document).ready(function () {
     var freeSwiper = new Swiper('.swiper-container.free-slide-js', swiperOption());
     var aroundSwiper = new Swiper('.swiper-container.around-slide-js', swiperOption());
 
-    var projectSwiper = new Swiper('.project-slide-js', swiperOptionSlide("auto", ".project__button-next", ".project__button-prev"));
+    var projectSwiper = new Swiper('.project-slide-js', swiperOptionSlide(196, "auto", ".project__button-next", ".project__button-prev"));
 
-    var descLogoSwiper0 = new Swiper('.description__row-0 .desc-slideLogo-js', swiperOptionSlide("5", ".description__row-0 .descLogo__button-next", ".description__row-0 .descLogo__button-prev"));
-    var descLogoSwiper1 = new Swiper('.description__row-1 .desc-slideLogo-js', swiperOptionSlide("5", ".description__row-1 .descLogo__button-next", ".description__row-1 .descLogo__button-prev"));
-    var descLogoSwiper2 = new Swiper('.description__row-2 .desc-slideLogo-js', swiperOptionSlide("5", ".description__row-2 .descLogo__button-next", ".description__row-2 .descLogo__button-prev"));
+    var descLogoSwiper0 = new Swiper('.description__row-0 .desc-slideLogo-js', swiperOptionSlide(0, "5", ".description__row-0 .descLogo__button-next", ".description__row-0 .descLogo__button-prev"));
+    var descLogoSwiper1 = new Swiper('.description__row-1 .desc-slideLogo-js', swiperOptionSlide(0, "5", ".description__row-1 .descLogo__button-next", ".description__row-1 .descLogo__button-prev"));
+    var descLogoSwiper2 = new Swiper('.description__row-2 .desc-slideLogo-js', swiperOptionSlide(0, "5", ".description__row-2 .descLogo__button-next", ".description__row-2 .descLogo__button-prev"));
 
-    var descCertSwiper0 = new Swiper('.description__row-0 .desc-slideCert-js', swiperOptionSlide("4", ".description__row-0 .descCert__button-next", ".description__row-0 .descCert__button-prev"));
-    var descCertSwiper1 = new Swiper('.description__row-1 .desc-slideCert-js', swiperOptionSlide("4", ".description__row-1 .descCert__button-next", ".description__row-1 .descCert__button-prev"));
-    var descCertSwiper2 = new Swiper('.description__row-2 .desc-slideCert-js', swiperOptionSlide("4", ".description__row-2 .descCert__button-next", ".description__row-2 .descCert__button-prev"));
+    var descCertSwiper0 = new Swiper('.description__row-0 .desc-slideCert-js', swiperOptionSlide(0, "4", ".description__row-0 .descCert__button-next", ".description__row-0 .descCert__button-prev"));
+    var descCertSwiper1 = new Swiper('.description__row-1 .desc-slideCert-js', swiperOptionSlide(0, "4", ".description__row-1 .descCert__button-next", ".description__row-1 .descCert__button-prev"));
+    var descCertSwiper2 = new Swiper('.description__row-2 .desc-slideCert-js', swiperOptionSlide(0, "4", ".description__row-2 .descCert__button-next", ".description__row-2 .descCert__button-prev"));
 
     function changeCount(classNameSlide, swiperName, mainCountName, mainLenName) {
       if ($(classNameSlide).length > 0) {
@@ -238,7 +239,7 @@ $(document).ready(function () {
 
         swiperVar = new Swiper(
           swiperContainer,
-          swiperOptionSlide("4", btnNextName, btnPrevName)
+          swiperOptionSlide(0, "4", btnNextName, btnPrevName)
         );
       });
     }
