@@ -30,40 +30,42 @@ header.header
 
     +logo("header")
 
-    .hamburger(hamburger-js)
-      .hamburger__box
-        .hamburger__box-line
+    .header--scroll
 
-    .header__mobile
-      .nav
-        ul.nav__list
-          each val, idx in navArr
-            if(bodyClass === "about" && idx === 0)
-              li.nav__item(class!= "nav__item-" + idx)
-                a(href= navArr[idx].href title="" class="nav__btn is-active")
-                  +icon(navArr[idx].iconName)
-                  span!= navArr[idx].name
-            else if(bodyClass === "order" && idx === 1)
-              li.nav__item(class!= "nav__item-" + idx)
-                a(href= navArr[idx].href title="" class="nav__btn is-active")
-                  +icon(navArr[idx].iconName)
-                  span!= navArr[idx].name
-            else if(bodyClass === "catalog" && idx === 2)
-              li.nav__item(class!= "nav__item-" + idx)
-                a(href= navArr[idx].href title="" class="nav__btn is-active")
-                  +icon(navArr[idx].iconName)
-                  span!= navArr[idx].name
-            else if(bodyClass === "contact" && idx === 3)
-              li.nav__item(class!= "nav__item-" + idx)
-                a(href= navArr[idx].href title="" class="nav__btn is-active")
-                  +icon(navArr[idx].iconName)
-                  span!= navArr[idx].name
-            else
-              li.nav__item(class!= "nav__item-" + idx)
-                a(href= navArr[idx].href title="" class="nav__btn")
-                  +icon(navArr[idx].iconName)
-                  span!= navArr[idx].name
+      .hamburger(hamburger-js)
+        .hamburger__box
+          .hamburger__box-line
 
-      +phone("header")
+      .header__mobile
+        .nav
+          ul.nav__list
+            each val, idx in navArr
+              if(bodyClass === "about" && idx === 0)
+                li.nav__item(class!= "nav__item-" + idx)
+                  a(href= navArr[idx].href title="" class="nav__btn is-active")
+                    +icon(navArr[idx].iconName)
+                    span!= navArr[idx].name
+              else if(bodyClass === "order" && idx === 1)
+                li.nav__item(class!= "nav__item-" + idx)
+                  a(href= navArr[idx].href title="" class="nav__btn is-active")
+                    +icon(navArr[idx].iconName)
+                    span!= navArr[idx].name
+              else if(bodyClass === "catalog" && idx === 2)
+                li.nav__item(class!= "nav__item-" + idx)
+                  a(href= navArr[idx].href title="" class="nav__btn is-active")
+                    +icon(navArr[idx].iconName)
+                    span!= navArr[idx].name
+              else if(bodyClass === "contact" && idx === 3)
+                li.nav__item(class!= "nav__item-" + idx)
+                  a(href= navArr[idx].href title="" class="nav__btn is-active")
+                    +icon(navArr[idx].iconName)
+                    span!= navArr[idx].name
+              else
+                li.nav__item(class!= "nav__item-" + idx)
+                  a(href= navArr[idx].href title="" class="nav__btn")
+                    +icon(navArr[idx].iconName)
+                    span!= navArr[idx].name
+
+        +phone("header")
         
 // HEADER :: END

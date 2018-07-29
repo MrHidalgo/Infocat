@@ -6,7 +6,6 @@
   top: 0
   left: 0
   height: 100%
-  overflow-y: auto
   +r(767)
     width: 100%
     height: 68px
@@ -20,6 +19,11 @@
     width: 166px
 
 
+  &--scroll
+    +rmin(768)
+      height: calc(100vh - 236px)
+
+
   &__wrapper
     +r(767)
       display: flex
@@ -30,7 +34,10 @@
   &__mobile
     display: none
     +rmin(768)
-      display: block
+      display: flex
+      height: 100%
+      flex-direction: column
+      justify-content: space-between
     +r(767)
       z-index: 100
       position: fixed
