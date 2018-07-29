@@ -13,10 +13,10 @@ gulp.task('sprite:png', function() {
     .pipe(spritesmith({
         imgName: 'sprite.png',
         cssName: '_sprite-png.scss',
-        imgPath: '../img/sprite.png',
+        imgPath: '../images/sprite.png',
         retinaSrcFilter: config.src.iconsPng + '/*@2x.png',
         retinaImgName: 'sprite@2x.png',
-        retinaImgPath: '../img/sprite@2x.png',
+        retinaImgPath: '../images/sprite@2x.png',
         padding: 10,
         algorithm: 'binary-tree',
         cssTemplate: __dirname + '/sprite.template.mustache'

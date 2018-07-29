@@ -20,4 +20,4 @@ gulp.task('clean:dist', function() {
 // Clear gulp cache
 gulp.task('cache:clear', function (callback) {
   return cache.clearAll(callback)
-})
+});
