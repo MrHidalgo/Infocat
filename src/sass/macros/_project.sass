@@ -108,10 +108,20 @@
   .swiper
     &-container
       margin-left: -196px
+      +rmin(768)
+        margin-left: -42px
+      +rmin(992)
+        margin-left: -84px
+      +rmin(1440)
+        margin-left: -196px
       +r(1199)
         padding-top: 100px
       +r(767)
         padding-top: 50px
+        padding-left: 0
+        padding-right: 0
+        margin-left: -20px
+        margin-right: -20px
     &-pagination
       +r(767)
         transform: translate(0)
@@ -132,9 +142,11 @@
       width: 100%
       max-width: 407px
       +rmin(320)
-        min-width: 270px
+        max-width: 280px
+      +rmin(576)
+        max-width: 330px
       +rmin(768)
-        min-width: 350px
+        max-width: 370px
       +rmin(1200)
-        min-width: 400px
+        max-width: 400px
 

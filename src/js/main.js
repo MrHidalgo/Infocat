@@ -151,19 +151,25 @@ $(document).ready(function () {
         breakpoints: {
           576: {
             slidesPerView: 1,
-            spaceBetween: 20
+            spaceBetween: 20,
+            slidesOffsetBefore: 20,
           },
           768: {
             slidesPerView: 2,
-            spaceBetween: 20
+            spaceBetween: 20,
+            slidesOffsetBefore: 42
+          },
+          992: {
+            slidesOffsetBefore: 84
           },
           1200: {
             slidesPerView: 3,
-            spaceBetween: 30
+            spaceBetween: 30,
           },
           1440: {
             slidesPerView: 4,
-            spaceBetween: 30
+            spaceBetween: 30,
+            slidesOffsetBefore: 196
           }
         },
         navigation: {
