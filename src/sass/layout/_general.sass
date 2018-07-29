@@ -60,10 +60,16 @@ body, html
       padding-left: (166px + 196px)
 
     &.contact
+      min-height: 921px
+      max-height: 100vh
       +rmin(768)
         padding-left: 113px
       +rmin(1440)
         padding-left: 166px
+
+      .contact
+        min-height: 921px
+        height: calc(100vh - 121px)
 
 .container
   width: 100%
