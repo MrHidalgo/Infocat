@@ -71,7 +71,7 @@ $(document).ready(function(){
         imgContainer = elem.siblings(".project__block-img");
 
       elem.toggleClass("is-active");
-      imgContainer.toggleClass("is-open");
+      imgContainer.slideToggle("200");
     });
   }
 

@@ -83,12 +83,17 @@
       font-size: 72px
 
     span
+      display: inline-block
+      text-align: center
       &:nth-child(1)
         font-size: 252px
         +rmin(576)
+          min-width: 100px
           font-size: 152px
         +rmin(1366)
+          min-width: 165px
           font-size: 252px
+
 
 
   .swiper
