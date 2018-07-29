@@ -134,6 +134,8 @@
           justify-content: center
           width: 263px
           height: 220px
+          padding-left: 15px
+          padding-right: 15px
           border-radius: 10px
           background-color: $c-white
           box-shadow: 0 0 9.1px 0.9px rgba(19, 21, 22, 0.08)
@@ -165,13 +167,17 @@
 
       > div
         display: none
+        position: relative
+        left: -196px
+        padding-left: 192px
+        width: calc(100% + 196px)
         padding-top: 28px
         padding-bottom: 28px
         box-shadow: inset 0 0 100px 10px rgba($c-black, 0.15)
 
         &.is-show
           display: block
-          animation-name: slideInRight
+          animation-name: fadeIn
 
         .custom__button-wrap
           justify-content: flex-end
