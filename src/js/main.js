@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(document).ready(function () {
 
   //////////
   // Global variables
@@ -22,7 +22,7 @@ $(document).ready(function(){
   ////////////
   // READY - triggered when PJAX DONE
   ////////////
-  function pageReady(){
+  function pageReady() {
     initSliders();
     initScrollMonitor();
     initMasks();
@@ -31,10 +31,14 @@ $(document).ready(function(){
     hamburgerMenu();
     projectBlockBtn();
     initLightbox();
+    initPreferScroll();
   }
 
   // this is a master function which should have all functionality
   pageReady();
+  _window.on("resize", function (e) {
+    initPreferScroll();
+  });
 
 
   //////////
@@ -43,20 +47,21 @@ $(document).ready(function(){
 
 
   // Prevent # behavior
-	_document
-    .on('click', '[href="#"]', function(e) {
-  		e.preventDefault();
-  	});
+  _document
+    .on('click', '[href="#"]', function (e) {
+      e.preventDefault();
+    });
 
 
   // HAMBURGER TOGGLER
   function hamburgerMenu() {
-    $("[hamburger-js]").on("click", function(e) {
+    $("[hamburger-js]").on("click", function (e) {
       $(e.currentTarget).toggleClass("is-active");
       $(".header__mobile").toggleClass("is-open");
       $("body, html").toggleClass("is-hide-scroll");
     })
   }
+
   function closeMobileMenu() {
     $("[hamburger-js]").removeClass("is-active");
     $(".header__mobile").removeClass("is-open");
@@ -66,7 +71,7 @@ $(document).ready(function(){
 
   // PROJECT BLOCK BTN
   function projectBlockBtn() {
-    $(".project__block-btn").on("click", function(e) {
+    $(".project__block-btn").on("click", function (e) {
       var elem = $(e.currentTarget),
         imgContainer = elem.siblings(".project__block-img");
 
@@ -86,11 +91,24 @@ $(document).ready(function(){
   }
 
 
+  // LIGHTBOX
+  function initPreferScroll() {
+    var ps = "";
+
+    if (_window.width() >= 768) {
+      ps = new PerfectScrollbar('.header--scroll');
+    } else if (typeof ps === "object") {
+      ps.destroy();
+      ps = null;
+    }
+  }
+
+
   //////////
   // SLIDERS
   //////////
 
-  function initSliders(){
+  function initSliders() {
     function swiperOption() {
       return {
         wrapperClass: "swiper-wrapper",
@@ -114,6 +132,7 @@ $(document).ready(function(){
         }
       }
     }
+
     function swiperOptionSlide(slidesPerViewOpt, nextBtnName, prevBtnName) {
       return {
         wrapperClass: "swiper-wrapper",
@@ -156,6 +175,7 @@ $(document).ready(function(){
         }
       }
     }
+
     var freeSwiper = new Swiper('.swiper-container.free-slide-js', swiperOption());
     var aroundSwiper = new Swiper('.swiper-container.around-slide-js', swiperOption());
 
@@ -178,18 +198,19 @@ $(document).ready(function(){
         len.text((swiperName.slides.length - 2) || 0);
         current.text((swiperName.realIndex + 1) || 0);
 
-        swiperName.on('slideChange', function() {
+        swiperName.on('slideChange', function () {
           current.text((swiperName.realIndex + 1) || 0);
         });
       }
     }
+
     changeCount(".free-slide-js", freeSwiper, "[free-count-js]", "[free-count-js]");
     changeCount(".around-slide-js", aroundSwiper, "[around-count-js]", "[around-count-js]");
 
 
     // DESCRIPTION CERT
     function descCertBtn() {
-      $(".description__row-btn").on("click", function(e) {
+      $(".description__row-btn").on("click", function (e) {
         var elem = $(e.currentTarget),
           elemIdx = elem.attr("data-idx"),
           elemSpanContainer = elem.find("span"),
@@ -199,7 +220,7 @@ $(document).ready(function(){
         var parentContainer = elem.closest(".description__row-cert"),
           certContainer = parentContainer.find("[description__cert-js]");
 
-        if(elem.hasClass("is-active")) {
+        if (elem.hasClass("is-active")) {
           $(e.currentTarget).removeClass("is-active");
           elemSpanContainer.text(elem.attr("data-curr"));
           certContainer.removeClass("is-show");
@@ -221,6 +242,7 @@ $(document).ready(function(){
         );
       });
     }
+
     descCertBtn();
   }
 
@@ -258,8 +280,8 @@ $(document).ready(function(){
 
 
   // Masked input
-  function initMasks(){
-    $("[js-dateMask]").mask("99.99.99",{placeholder:"ДД.ММ.ГГ"});
+  function initMasks() {
+    $("[js-dateMask]").mask("99.99.99", {placeholder: "ДД.ММ.ГГ"});
     $("input[type='tel']").mask("+7 (000) 000-0000", {placeholder: "+7 (___) ___-____"});
   }
 
@@ -267,13 +289,13 @@ $(document).ready(function(){
   ////////////
   // SCROLLMONITOR - WOW LIKE
   ////////////
-  function initScrollMonitor(){
-    $('.wow').each(function(i, el){
+  function initScrollMonitor() {
+    $('.wow').each(function (i, el) {
 
-      var elWatcher = scrollMonitor.create( $(el) );
+      var elWatcher = scrollMonitor.create($(el));
 
       var delay;
-      if ( $(window).width() < 768 ){
+      if ($(window).width() < 768) {
         delay = 0
       } else {
         delay = $(el).data('animation-delay');
@@ -283,7 +305,7 @@ $(document).ready(function(){
 
       var animationName = $(el).data('animation-name') || "wowFade"
 
-      elWatcher.enterViewport(throttle(function() {
+      elWatcher.enterViewport(throttle(function () {
         $(el).addClass(animationClass);
         $(el).css({
           'animation-name': animationName,
@@ -293,7 +315,7 @@ $(document).ready(function(){
       }, 100, {
         'leading': true
       }));
-      elWatcher.exitViewport(throttle(function() {
+      elWatcher.exitViewport(throttle(function () {
         $(el).removeClass(animationClass);
         $(el).css({
           'animation-name': 'none',
@@ -312,21 +334,21 @@ $(document).ready(function(){
   Barba.Pjax.Dom.containerClass = "page";
 
   var FadeTransition = Barba.BaseTransition.extend({
-    start: function() {
+    start: function () {
       Promise
         .all([this.newContainerLoading, this.fadeOut()])
         .then(this.fadeIn.bind(this));
     },
 
-    fadeOut: function() {
+    fadeOut: function () {
       var deferred = Barba.Utils.deferred();
 
       anime({
         targets: this.oldContainer,
-        opacity : .5,
+        opacity: .5,
         easing: easingSwing, // swing
         duration: 300,
-        complete: function(anim){
+        complete: function (anim) {
           deferred.resolve();
         }
       })
@@ -334,15 +356,15 @@ $(document).ready(function(){
       return deferred.promise
     },
 
-    fadeIn: function() {
+    fadeIn: function () {
       var _this = this;
       var $el = $(this.newContainer);
 
       $(this.oldContainer).hide();
 
       $el.css({
-        visibility : 'visible',
-        opacity : .5
+        visibility: 'visible',
+        opacity: .5
       });
 
       anime({
@@ -357,7 +379,7 @@ $(document).ready(function(){
         opacity: 1,
         easing: easingSwing, // swing
         duration: 300,
-        complete: function(anim) {
+        complete: function (anim) {
           triggerBody();
           _this.done();
         }
@@ -366,14 +388,14 @@ $(document).ready(function(){
   });
 
   // set barba transition
-  Barba.Pjax.getTransition = function() {
+  Barba.Pjax.getTransition = function () {
     return FadeTransition;
   };
 
   Barba.Prefetch.init();
   Barba.Pjax.start();
 
-  Barba.Dispatcher.on('newPageReady', function(currentStatus, oldStatus, container, newPageRawHTML) {
+  Barba.Dispatcher.on('newPageReady', function (currentStatus, oldStatus, container, newPageRawHTML) {
 
     pageReady();
     closeMobileMenu();
@@ -381,7 +403,7 @@ $(document).ready(function(){
   });
 
   // some plugins get bindings onNewPage only that way
-  function triggerBody(){
+  function triggerBody() {
     $(window).scroll();
     $(window).resize();
   }

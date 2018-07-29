@@ -21,6 +21,10 @@
 
   &--scroll
     +rmin(768)
+      position: relative
+      overflow: hidden
+      height: calc(100vh - 175px)
+    +rmin(1440)
       height: calc(100vh - 236px)
 
 
@@ -47,6 +51,9 @@
       width: 100%
       height: calc(100% - 68px)
       overflow-y: auto
+      animation-fill-mode: both
+      animation-duration: 0.4s
+      animation-name: zoomIn
 
       &.is-open
         display: block
