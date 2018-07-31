@@ -33,6 +33,7 @@ $(document).ready(function () {
     initLightbox();
     initPreferScroll();
     initQuickForm();
+    initProjectTextShow();
   }
 
   // this is a master function which should have all functionality
@@ -75,10 +76,12 @@ $(document).ready(function () {
   function projectBlockBtn() {
     $(".project__block-btn").on("click", function (e) {
       var elem = $(e.currentTarget),
-        imgContainer = elem.siblings(".project__block-img");
+        textContainer = elem.closest(".project__block").find(".project__block-text");
 
       elem.toggleClass("is-active");
-      imgContainer.slideToggle("200");
+      textContainer.css({
+        "height" : textContainer.attr("data-height")
+      }).toggleClass("is-partHide");
     });
   }
 
@@ -113,6 +116,23 @@ $(document).ready(function () {
     });
     $(".quick__form-close").on("click", function(e) {
       $("[quick-form-js]").removeClass("is-active");
+    });
+  }
+
+
+  function initProjectTextShow() {
+    var textElem = $(".project__block-text");
+
+    textElem.each(function(idx, val) {
+      var valHeight = $(val).height();
+
+      $(val).attr("data-height", valHeight);
+
+      if(valHeight > 82) {
+        $(val).addClass("is-partHide");
+      } else {
+        $(val).closest(".project__block").find(".project__block-btn").hide();
+      }
     });
   }
 
