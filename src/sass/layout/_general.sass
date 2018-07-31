@@ -61,15 +61,20 @@ body, html
 
     &.contact
       min-height: 921px
-      max-height: 100vh
-      +rmin(768)
+      +r(767)
+        min-height: auto
+      +rmin(992)
         padding-left: 113px
+        max-height: 100vh
       +rmin(1440)
         padding-left: 166px
 
       .contact
-        min-height: 921px
-        height: calc(100vh - 121px)
+        +rmin(992)
+          min-height: 921px
+          height: calc(100vh - 90px)
+        +rmin(1440)
+          height: calc(100vh - 121px)
 
 .container
   width: 100%
@@ -88,7 +93,7 @@ body, html
       padding-left: 42px
     +rmin(992)
       padding-left: 84px
-    +rmin(1200)
+    +rmin(1440)
       padding-left: 196px
   &-inner
     padding-left: 0

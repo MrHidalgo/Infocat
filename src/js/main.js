@@ -37,6 +37,7 @@ $(document).ready(function () {
 
   // this is a master function which should have all functionality
   pageReady();
+
   _window.on("resize", function (e) {
     initPreferScroll();
   });
@@ -145,7 +146,7 @@ $(document).ready(function () {
       }
     }
 
-    function swiperProject(nextBtnName, prevBtnName) {
+    function swiperProject() {
       return {
         wrapperClass: "swiper-wrapper",
         slideClass: "swiper-slide",
@@ -160,8 +161,8 @@ $(document).ready(function () {
         slidesPerView: "auto",
         spaceBetween: 30,
         navigation: {
-          nextEl: nextBtnName,
-          prevEl: prevBtnName,
+          nextEl: ".project__button-next",
+          prevEl: ".project__button-prev",
         },
         pagination: {
           el: '.swiper-pagination',
@@ -216,7 +217,7 @@ $(document).ready(function () {
     var freeSwiper = new Swiper('.swiper-container.free-slide-js', swiperOption());
     var aroundSwiper = new Swiper('.swiper-container.around-slide-js', swiperOption());
 
-    var projectSwiper = new Swiper('.project-slide-js', swiperProject(".project__button-next", ".project__button-prev"));
+    var projectSwiper = new Swiper('.swiper-container.project-slide-js', swiperProject());
 
     var descLogoSwiper0 = new Swiper('.description__row-0 .desc-slideLogo-js', swiperOptionSlide("5", ".description__row-0 .descLogo__button-next", ".description__row-0 .descLogo__button-prev"));
     var descLogoSwiper1 = new Swiper('.description__row-1 .desc-slideLogo-js', swiperOptionSlide("5", ".description__row-1 .descLogo__button-next", ".description__row-1 .descLogo__button-prev"));
@@ -260,12 +261,12 @@ $(document).ready(function () {
         if (elem.hasClass("is-active")) {
           $(e.currentTarget).removeClass("is-active");
           elemSpanContainer.text(elem.attr("data-curr"));
-          certContainer.removeClass("is-show");
+          certContainer.slideUp("300").removeClass("is-animated");
         } else {
           $(e.currentTarget).addClass("is-active");
           elem.attr("data-curr", elemSpanCurrText);
           elemSpanContainer.text(elemDataAttr);
-          certContainer.addClass("is-show");
+          certContainer.slideDown("300").addClass("is-animated");
         }
 
         var swiperVar = "descCertSwiper".concat(elemIdx),
@@ -352,14 +353,6 @@ $(document).ready(function () {
       }, 100, {
         'leading': true
       }));
-      elWatcher.exitViewport(throttle(function () {
-        $(el).removeClass(animationClass);
-        $(el).css({
-          'animation-name': 'none',
-          'animation-delay': 0,
-          'visibility': 'hidden'
-        });
-      }, 100));
     });
 
   }

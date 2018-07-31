@@ -157,7 +157,7 @@
       p
         padding-top: 26px
         padding-bottom: 31px
-        color: $c-dimGray
+        color: rgba($c-dimGray, 0.7)
         font-size: 20px
         +r(767)
           font-size: 16px
@@ -175,9 +175,19 @@
         padding-bottom: 28px
         box-shadow: inset 0 0 100px 10px rgba($c-black, 0.15)
 
-        &.is-show
-          display: block
-          animation-name: fadeIn
+        &.is-animated
+          .custom__button-wrap,
+          .swiper-container
+            animation-fill-mode: both
+            animation-delay: 0.45s
+            animation-duration: 1s
+
+          .custom__button-wrap
+            animation-name: zoomIn
+
+          .swiper-container
+            animation-name: slideInRight
+
 
         .custom__button-wrap
           justify-content: flex-end

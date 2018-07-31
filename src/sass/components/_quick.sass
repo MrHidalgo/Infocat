@@ -22,9 +22,6 @@
     flex-direction: column
     align-items: center
     justify-content: center
-    width: 130px
-    height: 130px
-    padding: 15px
     border-radius: 100%
     background-color: $c-navyBlue
     +rmin(320)
@@ -59,12 +56,25 @@
     bottom: 0
     right: 0
     width: 584px
-    height: 662px
-    padding-top: 102px
-    padding-left: 76px
-    border-bottom-right-radius: 65px
     background-color: $c-white
     box-shadow: 0 0 20px 3px rgba($c-black, 0.15)
+    +rmin(320)
+      padding-top: 42px
+      padding-left: 15px
+      padding-right: 10px
+      border-bottom-right-radius: 45px
+    +rmin(576)
+      padding-top: 62px
+      padding-left: 46px
+      padding-right: 0
+    +rmin(1200)
+      padding-top: 82px
+      padding-left: 56px
+      border-bottom-right-radius: 55px
+    +rmin(1440)
+      padding-top: 102px
+      padding-left: 76px
+      border-bottom-right-radius: 65px
 
     &.is-active
       display: block
@@ -84,6 +94,9 @@
       right: 35px
       width: 24px
       height: 24px
+      +r(575)
+        top: 15px
+        right: 15px
 
       &:before,
       &:after
@@ -104,24 +117,69 @@
       padding-bottom: 80px
       font-size: 30px
       font-weight: 300
+      +rmin(320)
+        padding-bottom: 40px
+      +rmin(768)
+        padding-bottom: 60px
+      +rmin(1200)
+        padding-bottom: 80px
 
     .form__field--info
       width: 100%
       max-width: 385px
       margin-bottom: 80px
+      +rmin(320)
+        maring-bottom: 40px
+      +rmin(768)
+        maring-bottom: 60px
+      +rmin(1200)
+        maring-bottom: 80px
 
 
-
-@keyframes quickAnim
-  0%
-    opacity: 1
-    border-radius: 100%
-    border-bottom-right-radius: 65px
-    width: 130px
-    height: 130px
-  100%
-    width: 584px
-    height: 662px
+@media screen and (min-width: 320px)
+  @keyframes quickAnim
+    0%
+      opacity: 1
+      border-radius: 100%
+      border-bottom-right-radius: 65px
+      width: 130px
+      height: 130px
+    100%
+      width: 295px
+      height: 612px
+@media screen and (min-width: 576px)
+  @keyframes quickAnim
+    0%
+      opacity: 1
+      border-radius: 100%
+      border-bottom-right-radius: 65px
+      width: 130px
+      height: 130px
+    100%
+      width: 514px
+      height: 582px
+@media screen and (min-width: 768px)
+  @keyframes quickAnim
+    0%
+      opacity: 1
+      border-radius: 100%
+      border-bottom-right-radius: 65px
+      width: 130px
+      height: 130px
+    100%
+      width: 584px
+      height: 612px
+@media screen and (min-width: 1200px)
+  @keyframes quickAnim
+    0%
+      opacity: 1
+      border-radius: 100%
+      border-bottom-right-radius: 65px
+      width: 130px
+      height: 130px
+    100%
+      width: 584px
+      height: 662px
 
 
 

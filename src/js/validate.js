@@ -88,5 +88,22 @@ $(document).ready(function(){
       }
     }
   });
+  $(".quick__form form").validate({
+    errorPlacement: validateErrorPlacement,
+    highlight: validateHighlight,
+    unhighlight: validateUnhighlight,
+    submitHandler: validateSubmitHandler,
+    rules: {
+      quick_name: "required",
+      quick_phone: validatePhone
+    },
+    messages: {
+      name: "Заполните это поле",
+      phone: {
+        required: "Заполните это поле",
+        minlength: "Введите корректный телефон"
+      }
+    }
+  });
 
 });
