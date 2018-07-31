@@ -21,7 +21,8 @@ mixin btn(classMod, text, textData, idx)
 
 
 mixin logo(classMod)
-  .logotype(
+  .logotype.wow.wowFadeLeft(
+    data-animation-delay="0.25s"
     class!= (classMod) ? "logotype--" + classMod: ""
   )
     a(
@@ -38,7 +39,8 @@ mixin logo(classMod)
 
 
 mixin phone(classMod)
-  .phone(
+  .phone.wow.wowFadeLeft(
+    data-animation-delay="0.8s"
     class!= (classMod) ? "phone--" + classMod: ""
   )
     a(

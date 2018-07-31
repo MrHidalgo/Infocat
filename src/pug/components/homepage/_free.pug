@@ -12,8 +12,8 @@ section.free
 
   .free__wrapper
 
-    p.free__subtitle.subtitle!= "Интегрируем программные решения"
-    div.free__count(free-count-js)
+    p.free__subtitle.subtitle.wow.wowFadeUp(data-animation-delay="0.3s")!= "Интегрируем программные решения"
+    div.free__count.wow.wowFadeUp(data-animation-delay="0.4s")(free-count-js)
       p!= "Программа <span main-count-js></span> <span>\\</span> <span main-len-js></span>"
 
     .swiper-container.free-slide-js
@@ -21,13 +21,13 @@ section.free
       .swiper-wrapper
         .swiper-slide
           .free__row.free__row-0
-            .free__row-left
+            .free__row-left.wow.wowFadeUp(data-animation-delay="0.5s")
               h1.free__title.title!= "Бесплатный «Пилот»"
               p.free__text!= "Наша команда высококвалифицированных специалистов проведет подготовительные работы, индивидуально разработает проект, подберет оборудование и произведет работы по развертыванию решения."
 
               +btn("free__btn", "Подробнее")
 
-            .free__row-right
+            .free__row-right.wow.wowFadeUp(data-animation-delay="0.6s")
               img(
                 src="./images/img-graph__free.png"
                 srcset="./images/img-graph__free@2x.png 2x"
@@ -36,11 +36,11 @@ section.free
                )
 
           .free__row.free__row-1
-            .free__col.free__col-0
+            .free__col.free__col-0.wow.wowFadeUp(data-animation-delay="0.6s")
               p.with-dot!= "Отсутствие <br>финансовых затрат"
-            .free__col.free__col-1
+            .free__col.free__col-1.wow.wowFadeUp(data-animation-delay="0.65s")
               p.with-dot!= "Минимальное участие <br>Вашего It-специалиста"
-            .free__col.free__col-2
+            .free__col.free__col-2.wow.wowFadeUp(data-animation-delay="0.7s")
               p.with-dot!= "Незначительная <br>нагрузка на текущую систему"
         
         // slide

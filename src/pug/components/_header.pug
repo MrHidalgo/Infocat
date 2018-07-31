@@ -32,7 +32,10 @@ header.header
 
     .header--scroll
 
-      .hamburger(hamburger-js)
+      .hamburger.wow.wowFadeRight(
+        data-animation-delay="0.25s"
+        hamburger-js
+      )
         .hamburger__box
           .hamburger__box-line
 
@@ -41,27 +44,42 @@ header.header
           ul.nav__list
             each val, idx in navArr
               if(bodyClass === "about" && idx === 0)
-                li.nav__item(class!= "nav__item-" + idx)
+                li.nav__item.wow.wowFadeLeft(
+                  data-animation-delay!= (0.4 + parseFloat(0.1 * idx)).toFixed(2) + "s"
+                  class!= "nav__item-" + idx
+                )
                   a(href= navArr[idx].href title="" class="nav__btn is-active")
                     +icon(navArr[idx].iconName)
                     span!= navArr[idx].name
               else if(bodyClass === "order" && idx === 1)
-                li.nav__item(class!= "nav__item-" + idx)
+                li.nav__item.wow.wowFadeLeft(
+                  data-animation-delay!= (0.4 + parseFloat(0.1 * idx)).toFixed(2) + "s"
+                  class!= "nav__item-" + idx
+                )
                   a(href= navArr[idx].href title="" class="nav__btn is-active")
                     +icon(navArr[idx].iconName)
                     span!= navArr[idx].name
               else if(bodyClass === "catalog" && idx === 2)
-                li.nav__item(class!= "nav__item-" + idx)
+                li.nav__item.wow.wowFadeLeft(
+                  data-animation-delay!= (0.4 + parseFloat(0.1 * idx)).toFixed(2) + "s"
+                  class!= "nav__item-" + idx
+                )
                   a(href= navArr[idx].href title="" class="nav__btn is-active")
                     +icon(navArr[idx].iconName)
                     span!= navArr[idx].name
               else if(bodyClass === "contact" && idx === 3)
-                li.nav__item(class!= "nav__item-" + idx)
+                li.nav__item.wow.wowFadeLeft(
+                  data-animation-delay!= (0.4 + parseFloat(0.1 * idx)).toFixed(2) + "s"
+                  class!= "nav__item-" + idx
+                )
                   a(href= navArr[idx].href title="" class="nav__btn is-active")
                     +icon(navArr[idx].iconName)
                     span!= navArr[idx].name
               else
-                li.nav__item(class!= "nav__item-" + idx)
+                li.nav__item.wow.wowFadeLeft(
+                  data-animation-delay!= (0.4 + parseFloat(0.1 * idx)).toFixed(2) + "s"
+                  class!= "nav__item-" + idx
+                )
                   a(href= navArr[idx].href title="" class="nav__btn")
                     +icon(navArr[idx].iconName)
                     span!= navArr[idx].name

@@ -30,22 +30,22 @@ mixin descBlock(classMod, iconName, title, badgeCount, descArr)
   .description__row(
     class!= (classMod) ? "description__row-" + classMod: ""
   )
-    .description__row-header
+    .description__row-header.wow.wowFadeUp(data-animation-delay="0.4s")
       .description__row-title
         p
           span
             i(class!= "icon-" + iconName)
           span.title!= title
-      .description__row-badge
+      .description__row-badge.wow.wowFadeUp(data-animation-delay="0.5s")
         p!= "Услуга <span>" + badgeCount + "</span>/3"
 
-    .description__row-body
+    .description__row-body.wow.wowFadeUp(data-animation-delay="0.55s")
       each val, idx in descArr
         p!= val
 
-    .description__row-logo
+    .description__row-logo.wow.wowFadeUp(data-animation-delay="0.6s")
 
-      .custom__button-wrap
+      .custom__button-wrap.wow.wowFadeUp(data-animation-delay="0.65s")
         a.custom__button.custom__button-prev.descLogo__button-prev(
           href="#" title="" class=""
         )
@@ -55,7 +55,7 @@ mixin descBlock(classMod, iconName, title, badgeCount, descArr)
         )
           +icon("ico-strelka")
 
-      .swiper-container.desc-slideLogo-js
+      .swiper-container.desc-slideLogo-js.wow.wowFadeUp(data-animation-delay="0.7s")
         .swiper-wrapper
           .swiper-slide
             img(
@@ -202,7 +202,7 @@ mixin descBlock(classMod, iconName, title, badgeCount, descArr)
 section.description
   .description__wrapper
 
-    p.description__subtitle.subtitle!= "Интегрируем программные решения"
+    p.description__subtitle.subtitle.wow.wowFadeUp(data-animation-delay="0.3s")!= "Интегрируем программные решения"
 
     +descBlock("0", "desc-0", "Информационная безопасность", "1", descArr0)
     +descBlock("1", "desc-1", "Хранение данных", "2", descArr1)

@@ -5,9 +5,9 @@ section.project
   .project__wrapper
 
     .project__row
-      h1.project__title.title!= "Наши проекты"
+      h1.project__title.title.wow.wowFadeUp(data-animation-delay="0.3s")!= "Наши проекты"
 
-      .custom__button-wrap
+      .custom__button-wrap.wow.wowFadeUp(data-animation-delay="0.4s")
         a.custom__button.custom__button-prev.project__button-prev(
           href="#" title="" class=""
         )
@@ -17,7 +17,7 @@ section.project
         )
           +icon("ico-strelka")
 
-    .swiper-container.project-slide-js
+    .swiper-container.project-slide-js.wow.wowFadeUp(data-animation-delay="0.5s")
       .swiper-wrapper
         .swiper-slide
           .project__block
