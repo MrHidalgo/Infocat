@@ -23,8 +23,8 @@ $(document).ready(function () {
   // READY - triggered when PJAX DONE
   ////////////
   function pageReady() {
+    legacySupport();
     initSliders();
-    initScrollMonitor();
     initMasks();
     initPopups();
 
@@ -32,22 +32,32 @@ $(document).ready(function () {
     projectBlockBtn();
     initLightbox();
     initPreferScroll();
+    _window.on("resize", debounce(initPreferScroll, 200))
     initQuickForm();
     initProjectTextShow();
+
+    initScrollMonitor();
   }
 
   // this is a master function which should have all functionality
   pageReady();
-
-  _window.on("resize", function (e) {
-    initPreferScroll();
-  });
 
 
   //////////
   // COMMON
   //////////
 
+  function legacySupport(){
+    // svg support for laggy browsers
+    svg4everybody();
+
+    // Viewport units buggyfill
+    window.viewportUnitsBuggyfill.init({
+      force: false,
+      refreshDebounceWait: 150,
+      appendToBody: true
+    });
+  }
 
   // Prevent # behavior
   _document
@@ -350,6 +360,10 @@ $(document).ready(function () {
   function initScrollMonitor() {
     $('.wow').each(function (i, el) {
 
+      // if ( $(el).attr('style') ? $(el).attr('style').indexOf('animation-name') !== -1 : false ){
+      //   return true // don't animate twice
+      // }
+
       var elWatcher = scrollMonitor.create($(el));
 
       var delay;
@@ -419,7 +433,7 @@ $(document).ready(function () {
 
       anime({
         targets: "html, body",
-        scrollTop: 0,
+        scrollTop: 5,
         easing: easingSwing, // swing
         duration: 150
       });
@@ -454,6 +468,7 @@ $(document).ready(function () {
 
   // some plugins get bindings onNewPage only that way
   function triggerBody() {
+    _window.scrollTop(0);
     $(window).scroll();
     $(window).resize();
   }
