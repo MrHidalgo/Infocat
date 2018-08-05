@@ -128,12 +128,17 @@
 
   .swiper
     &-container
+      +rmin(320)
+        padding-left: 20px
       +rmin(768)
         margin-left: -42px
+        padding-left: 42px
       +rmin(992)
         margin-left: -84px
+        padding-left: 84px
       +rmin(1440)
         margin-left: -196px
+        padding-left: 196px
       +r(1199)
         padding-top: 100px
       +r(767)
@@ -142,15 +147,6 @@
         padding-right: 0
         margin-left: -20px
         margin-right: -20px
-    &-wrapper
-      +rmin(320)
-        padding-left: 20px
-      +rmin(768)
-        padding-left: 42px
-      +rmin(992)
-        padding-left: 84px
-      +rmin(1440)
-        padding-left: 196px
     &-pagination
       +r(767)
         transform: translate(0)
