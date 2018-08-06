@@ -34,6 +34,7 @@ $(document).ready(function () {
     initPreferScroll();
     initQuickForm();
     initProjectTextShow();
+    bodyClick();
   }
 
   // this is a master function which should have all functionality
@@ -114,12 +115,18 @@ $(document).ready(function () {
     $("[quick-btn-js]").on("click", function(e) {
       $("[quick-form-js]").addClass("is-active");
     });
+  }
+  function closeQuickForm() {
     $(".quick__form-close").on("click", function(e) {
       $("[quick-form-js]").removeClass("is-active");
     });
   }
+  closeQuickForm();
 
 
+  /**
+   *
+   */
   function initProjectTextShow() {
     var textElem = $(".project__block-text");
 
@@ -132,6 +139,22 @@ $(document).ready(function () {
         $(val).addClass("is-partHide");
       } else {
         $(val).closest(".project__block").find(".project__block-btn").hide();
+      }
+    });
+  }
+
+
+  /**
+   *
+   */
+  function bodyClick() {
+    $('body').on('click', function (e) {
+      const className = ".quick__btn, .quick__form";
+
+      console.log(!$(e.target).closest(className).length);
+
+      if (!$(e.target).closest(className).length) {
+        $(".quick__form-close").click();
       }
     });
   }
