@@ -7,20 +7,19 @@ html(lang="en")
   body(class=bodyClass)
     // place where pjax bindings happen's
     #barba-wrapper
-    
+      block header
+        include ../components/_header
+      
       // what should be changed with every pjax
       .page(class=outClass)
-        block header
-          include ../components/_header
-
         .page__content(class!= bodyClass)
           block content
 
         block footer
           include ../components/_footer
-
-        block quick
-          include ../components/_quick
-          
+      
+      block quick
+        include ../components/_quick
+            
       block scripts
         include _scripts

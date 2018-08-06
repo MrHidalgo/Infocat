@@ -183,14 +183,14 @@
       .form__textarea
         color: red
         border-color: red
-        +transition(color, border-color)
+        // +transition(color, border-color)
 
     &.has-done
       .form__input,
       .form__textarea
         color: $c-navyBlue
         border-color: $c-navyBlue
-        +transition(color, border-color)
+        // +transition(color, border-color)
       .form__icon
         opacity: 1
         +transition(opacity)
@@ -237,7 +237,7 @@
     +rmin(1440)
       font-size: 20px
 
-    &::-webkit-input-placeholder
+    &::placeholder
       color: $c-black
       +rmin(320)
         font-size: 14px
@@ -245,30 +245,8 @@
         font-size: 17px
       +rmin(1440)
         font-size: 20px
-    &::-moz-placeholder
-      color: $c-black
-      +rmin(320)
-        font-size: 14px
-      +rmin(992)
-        font-size: 17px
-      +rmin(1440)
-        font-size: 20px
-    &:-ms-input-placeholder
-      color: $c-black
-      +rmin(320)
-        font-size: 14px
-      +rmin(992)
-        font-size: 17px
-      +rmin(1440)
-        font-size: 20px
-    &:-moz-placeholder
-      color: $c-black
-      +rmin(320)
-        font-size: 14px
-      +rmin(992)
-        font-size: 17px
-      +rmin(1440)
-        font-size: 20px
+    &:focus
+      border-color: $c-navyBlue
 
   &__icon
     z-index: 0
@@ -303,7 +281,7 @@
     +rmin(1440)
       font-size: 20px
 
-    &::-webkit-input-placeholder
+    &::placeholder
       color: $c-black
       +rmin(320)
         font-size: 14px
@@ -311,30 +289,8 @@
         font-size: 17px
       +rmin(1440)
         font-size: 20px
-    &::-moz-placeholder
-      color: $c-black
-      +rmin(320)
-        font-size: 14px
-      +rmin(992)
-        font-size: 17px
-      +rmin(1440)
-        font-size: 20px
-    &:-ms-input-placeholder
-      color: $c-black
-      +rmin(320)
-        font-size: 14px
-      +rmin(992)
-        font-size: 17px
-      +rmin(1440)
-        font-size: 20px
-    &:-moz-placeholder
-      color: $c-black
-      +rmin(320)
-        font-size: 14px
-      +rmin(992)
-        font-size: 17px
-      +rmin(1440)
-        font-size: 20px
+    &:focus
+      border-color: $c-navyBlue
 
   &__btn
     cursor: pointer

@@ -23,8 +23,8 @@ $(document).ready(function () {
   // READY - triggered when PJAX DONE
   ////////////
   function pageReady() {
+    legacySupport();
     initSliders();
-    initScrollMonitor();
     initMasks();
     initPopups();
 
@@ -32,23 +32,34 @@ $(document).ready(function () {
     projectBlockBtn();
     initLightbox();
     initPreferScroll();
+    _window.on("resize", debounce(initPreferScroll, 200))
     initQuickForm();
     initProjectTextShow();
     bodyClick();
+
+    initScrollMonitor();
+    initValidations();
   }
 
   // this is a master function which should have all functionality
   pageReady();
-
-  _window.on("resize", function (e) {
-    initPreferScroll();
-  });
 
 
   //////////
   // COMMON
   //////////
 
+  function legacySupport(){
+    // svg support for laggy browsers
+    svg4everybody();
+
+    // Viewport units buggyfill
+    window.viewportUnitsBuggyfill.init({
+      force: false,
+      refreshDebounceWait: 150,
+      appendToBody: true
+    });
+  }
 
   // Prevent # behavior
   _document
@@ -442,7 +453,7 @@ $(document).ready(function () {
 
       anime({
         targets: "html, body",
-        scrollTop: 0,
+        scrollTop: 5,
         easing: easingSwing, // swing
         duration: 150
       });
@@ -477,7 +488,118 @@ $(document).ready(function () {
 
   // some plugins get bindings onNewPage only that way
   function triggerBody() {
+    _window.scrollTop(0);
     $(window).scroll();
     $(window).resize();
+  }
+
+
+  function initValidations(){
+    ////////////////
+    // FORM VALIDATIONS
+    ////////////////
+
+    // jQuery validate plugin
+    // https://jqueryvalidation.org
+
+
+    // GENERIC FUNCTIONS
+    ////////////////////
+
+    var validateErrorPlacement = function(error, element) {
+      error.addClass('ui-input__validation');
+      error.appendTo(element.parent("div"));
+    }
+    var validateHighlight = function(element) {
+      $(element).parent('div').addClass("has-error").removeClass("has-done");
+    }
+    var validateUnhighlight = function(element) {
+      $(element).parent('div').removeClass("has-error").addClass("has-done");
+    }
+    var validateSubmitHandler = function(form) {
+      $(form).addClass('loading');
+      $.ajax({
+        type: "POST",
+        url: $(form).attr('action'),
+        data: $(form).serialize(),
+        success: function(response) {
+          $(form).removeClass('loading');
+          var data = $.parseJSON(response);
+          if (data.status == 'success') {
+            // do something I can't test
+          } else {
+              $(form).find('[data-error]').html(data.message).show();
+          }
+        }
+      });
+    }
+
+    var validatePhone = {
+      required: true,
+      normalizer: function(value) {
+          var PHONE_MASK = '+X (XXX) XXX-XXXX';
+          if (!value || value === PHONE_MASK) {
+              return value;
+          } else {
+              return value.replace(/[^\d]/g, '');
+          }
+      },
+      minlength: 11,
+      digits: true
+    }
+
+    ////////
+    // FORMS
+
+
+    /////////////////////
+    // REGISTRATION FORM
+    ////////////////////
+    $(".post__form").validate({
+      errorPlacement: validateErrorPlacement,
+      highlight: validateHighlight,
+      unhighlight: validateUnhighlight,
+      submitHandler: validateSubmitHandler,
+      rules: {
+        name: "required",
+        subject: "required",
+        message: "required",
+        email: {
+          required: true,
+          email: true
+        },
+        phone: validatePhone
+      },
+      messages: {
+        name: "Заполните это поле",
+        subject: "Заполните это поле",
+        message: "Заполните это поле",
+        email: {
+          required: "Заполните это поле",
+          email: "Email содержит неправильный формат"
+        },
+        phone: {
+          required: "Заполните это поле",
+          minlength: "Введите корректный телефон"
+        }
+      }
+    });
+    $(".quick__form form").validate({
+      errorPlacement: validateErrorPlacement,
+      highlight: validateHighlight,
+      unhighlight: validateUnhighlight,
+      submitHandler: validateSubmitHandler,
+      rules: {
+        quick_name: "required",
+        quick_phone: validatePhone
+      },
+      messages: {
+        quick_name: "Заполните это поле",
+        quick_phone: {
+          required: "Заполните это поле",
+          minlength: "Введите корректный телефон"
+        }
+      }
+    });
   }
 });
