@@ -395,9 +395,9 @@ $(document).ready(function () {
         delay = $(el).data('animation-delay');
       }
 
-      var animationClass = $(el).data('animation-class') || "wowFadeUp"
+      var animationClass = $(el).data('animation-class') || "wowFadeUp";
 
-      var animationName = $(el).data('animation-name') || "wowFade"
+      var animationName = $(el).data('animation-name') || "wowFade";
 
       elWatcher.enterViewport(throttle(function () {
         $(el).addClass(animationClass);
@@ -490,9 +490,10 @@ $(document).ready(function () {
 
   // some plugins get bindings onNewPage only that way
   function triggerBody() {
-    _window.scrollTop(0);
     $(window).scroll();
     $(window).resize();
+
+    initScrollMonitor();
   }
 
 
