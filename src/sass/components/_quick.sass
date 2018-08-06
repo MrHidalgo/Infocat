@@ -88,6 +88,15 @@
         animation-duration: 0.5s
         animation-name: fadeIn
 
+    &.is-close
+      animation-fill-mode: both
+      animation-duration: 0.45s
+      animation-name: quickAnimClose
+
+      > *
+        display: none
+
+
     &-close
       position: absolute
       top: 35px
@@ -129,11 +138,11 @@
       max-width: 385px
       margin-bottom: 80px
       +rmin(320)
-        maring-bottom: 40px
+        margin-bottom: 40px
       +rmin(768)
-        maring-bottom: 60px
+        margin-bottom: 60px
       +rmin(1200)
-        maring-bottom: 80px
+        margin-bottom: 80px
 
 
 @media screen and (min-width: 320px)
@@ -147,6 +156,18 @@
     100%
       width: 295px
       height: 612px
+@media screen and (min-width: 320px)
+  @keyframes quickAnimClose
+    0%
+      width: 295px
+      height: 612px
+    90%
+      border-radius: 100%
+      border-bottom-right-radius: 65px
+      width: 130px
+      height: 130px
+    100%
+      opacity: 0
 @media screen and (min-width: 576px)
   @keyframes quickAnim
     0%
@@ -158,6 +179,18 @@
     100%
       width: 514px
       height: 582px
+@media screen and (min-width: 576px)
+  @keyframes quickAnimClose
+    0%
+      width: 514px
+      height: 582px
+    90%
+      border-radius: 100%
+      border-bottom-right-radius: 65px
+      width: 130px
+      height: 130px
+    100%
+      opacity: 0
 @media screen and (min-width: 768px)
   @keyframes quickAnim
     0%
@@ -169,6 +202,19 @@
     100%
       width: 584px
       height: 612px
+@media screen and (min-width: 768px)
+  @keyframes quickAnimClose
+    0%
+      width: 584px
+      height: 612px
+    90%
+      border-radius: 100%
+      border-bottom-right-radius: 65px
+      width: 130px
+      height: 130px
+    100%
+      opacity: 0
+
 @media screen and (min-width: 1200px)
   @keyframes quickAnim
     0%
@@ -180,6 +226,19 @@
     100%
       width: 584px
       height: 662px
+@media screen and (min-width: 1200px)
+  @keyframes quickAnimClose
+    0%
+      width: 584px
+      height: 662px
+    90%
+      border-radius: 100%
+      border-bottom-right-radius: 65px
+      width: 130px
+      height: 130px
+    100%
+      opacity: 0
+
 
 
 

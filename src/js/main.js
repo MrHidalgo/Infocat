@@ -129,7 +129,11 @@ $(document).ready(function () {
   }
   function closeQuickForm() {
     $(".quick__form-close").on("click", function(e) {
-      $("[quick-form-js]").removeClass("is-active");
+    $("[quick-form-js]").addClass("is-close");
+
+      setTimeout(function() {
+        $("[quick-form-js]").removeClass("is-active is-close");
+      }, 450);
     });
   }
   closeQuickForm();
@@ -161,8 +165,6 @@ $(document).ready(function () {
   function bodyClick() {
     $('body').on('click', function (e) {
       const className = ".quick__btn, .quick__form";
-
-      console.log(!$(e.target).closest(className).length);
 
       if (!$(e.target).closest(className).length) {
         $(".quick__form-close").click();
