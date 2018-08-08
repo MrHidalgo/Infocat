@@ -15,7 +15,7 @@ $(document).ready(function () {
     desktop: 992,
     wide: 1336,
     hd: 1680
-  }
+  };
 
   var easingSwing = [.02, .01, .47, 1]; // default jQuery easing for anime.js
 
@@ -32,7 +32,7 @@ $(document).ready(function () {
     projectBlockBtn();
     initLightbox();
     initPreferScroll();
-    _window.on("resize", debounce(initPreferScroll, 200))
+    _window.on("resize", debounce(initPreferScroll, 200));
     initQuickForm();
     initProjectTextShow();
     bodyClick();
@@ -164,7 +164,7 @@ $(document).ready(function () {
    */
   function bodyClick() {
     $('body').on('click', function (e) {
-      const className = ".quick__btn, .quick__form";
+      var className = ".quick__btn, .quick__form";
 
       if (!$(e.target).closest(className).length) {
         $(".quick__form-close").click();
